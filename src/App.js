@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.css'
 import {
 	Collapse,
 	Navbar,
@@ -32,7 +33,7 @@ class App extends Component {
 		return (
 			<div>
 				<Navbar className="success">
-					<NavbarToggler right onClick={this.toggle} />
+					<NavbarToggler onClick={this.toggle} />
 					<NavbarBrand href="/">reactstrap</NavbarBrand>
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="ml-auto" navbar>
