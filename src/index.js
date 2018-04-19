@@ -4,13 +4,13 @@ import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
-import studentReducer from './store/reducers/studentReducer'
+import taskReducer from './store/reducers/taskReducer'
 
 import App from './App'
 import classes from './index.css'
 
 const rootReducer = combineReducers({
-	stu: studentReducer
+	tsk: taskReducer
 })
 
 const logger = store => {

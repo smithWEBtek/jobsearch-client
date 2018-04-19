@@ -1,7 +1,7 @@
 
 export {
-	createStudent,
-	deleteStudent,
-	updateStudent,
-	fetchStudents
-} from './studentActions'
+	createTask,
+	deleteTask,
+	updateTask,
+	fetchTasks
+} from './taskActions'
