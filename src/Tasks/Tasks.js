@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import * as actions from '../store/actions/index'
 import { connect } from 'react-redux';
-
+import Task from './Task'
 // import TaskViewer from '../Tasks/TaskViewer'
 
 class Tasks extends Component {
@@ -11,9 +11,7 @@ class Tasks extends Component {
 	}
 
 	componentDidMount() {
-		debugger
 		this.props.onFetchTasks()
-		console.log(this.props);
 	}
 
 	// handleClickTask = (code) => {
@@ -25,7 +23,9 @@ class Tasks extends Component {
 	render() {
 		let renderedTasks = this.props.tasks.map((task, index) => {
 			return (
-				<p key={index}>{task.name}</p>
+				<div key={index}>
+					<Task task={task} />
+				</div>
 			)
 		})
 
