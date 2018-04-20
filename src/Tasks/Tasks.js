@@ -11,6 +11,7 @@ class Tasks extends Component {
 	}
 
 	componentDidMount() {
+		debugger
 		this.props.onFetchTasks()
 		console.log(this.props);
 	}
