@@ -5,3 +5,10 @@ export {
 	updateTask,
 	fetchTasks
 } from './taskActions'
+
+export {
+	createCompany,
+	deleteCompany,
+	updateCompany,
+	fetchCompanies
+} from './companyActions'

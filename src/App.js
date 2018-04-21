@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import Tasks from '../src/Tasks/Tasks'
+import Companies from '../src/Companies/Companies'
 import MainNav from '../src/UI/MainNav'
 
 import {
@@ -18,11 +19,14 @@ class App extends Component {
 			<div>
 				<Container>
 					<Row>
-
 						<MainNav />
-
+					</Row>
+					<Row>
 						<Tasks />
-
+					</Row>
+					<Row>
+						<MainNav />
+						<Companies />
 					</Row>
 				</Container>
 			</div>

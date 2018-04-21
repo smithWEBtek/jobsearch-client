@@ -5,11 +5,13 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import taskReducer from './store/reducers/taskReducer'
+import companyReducer from './store/reducers/companyReducer'
 
 import App from './App'
 import classes from './index.css'
 
 const rootReducer = combineReducers({
+	com: companyReducer,
 	tsk: taskReducer
 })
 
