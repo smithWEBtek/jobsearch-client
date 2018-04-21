@@ -1,5 +1,5 @@
-import * as actionTypes from './actionTypes'
-import UserService from '../services/UserService'
+import * as actionTypes from './ActionTypes'
+import UserService from '../Services/UserService'
 
 //-----CREATE USER ACTIONS-----------------------------
 export const createUserStart = () => {

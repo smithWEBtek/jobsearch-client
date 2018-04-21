@@ -1,5 +1,5 @@
-import * as actionTypes from './actionTypes'
-import JobService from '../services/JobService'
+import * as actionTypes from './ActionTypes'
+import JobService from '../Services/JobService'
 
 //-----CREATE JOB ACTIONS-----------------------------
 export const createJobStart = () => {

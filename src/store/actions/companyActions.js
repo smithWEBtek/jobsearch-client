@@ -1,5 +1,5 @@
-import * as actionTypes from './actionTypes'
-import CompanyService from '../services/CompanyService'
+import * as actionTypes from './ActionTypes'
+import CompanyService from '../Services/CompanyService'
 
 //-----CREATE COMPANY ACTIONS-----------------------------
 export const createCompanyStart = () => {

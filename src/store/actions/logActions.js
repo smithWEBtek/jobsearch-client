@@ -1,5 +1,5 @@
-import * as actionTypes from './actionTypes'
-import LogService from '../services/LogService'
+import * as actionTypes from './ActionTypes'
+import LogService from '../Services/LogService'
 
 //-----CREATE LOG ACTIONS-----------------------------
 export const createLogStart = () => {

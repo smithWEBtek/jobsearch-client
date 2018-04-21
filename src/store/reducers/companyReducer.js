@@ -1,4 +1,5 @@
-import * as actionTypes from '../actions/actionTypes';
+import * as actionTypes from '../Actions/ActionTypes';
+import { debug } from 'util';
 
 const initialState = {
 	companies: [],

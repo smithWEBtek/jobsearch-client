@@ -1,50 +1,50 @@
 // const API_URL = 'http://127.0.0.1:3001/api'
 const API_URL = 'https://swt-jobsearch-api.herokuapp.com/api'
 
-const TaskService = {
-	createTask(task) {
+const StepService = {
+	createStep(step) {
 		const request = {
 			method: 'POST',
-			body: JSON.stringify({ task: task }),
+			body: JSON.stringify({ step: step }),
 			headers: { 'Content-Type': 'application/json' }
 		}
-		return fetch(`${API_URL}/tasks`, request)
+		return fetch(`${API_URL}/steps`, request)
 			.then(response => response.json())
 			.catch(error => {
-				console.log('[TaskService][createTask] ERROR: ', error)
+				console.log('[StepService][createStep] ERROR: ', error)
 			})
 	},
-	fetchTasks() {
-		return fetch(`${API_URL}/tasks`)
+	fetchSteps() {
+		return fetch(`${API_URL}/steps`)
 			.then(response => response.json())
 			.catch(error => {
-				console.log('[TaskService][fetchTasks] ERROR: ', error)
+				console.log('[StepService][fetchSteps] ERROR: ', error)
 			})
 	},
-	updateTask(data) {
+	updateStep(data) {
 		const request = {
 			method: 'PATCH',
-			body: JSON.stringify({ task: data }),
+			body: JSON.stringify({ step: data }),
 			headers: { 'Content-Type': 'application/json' }
 		}
-		return fetch(`${API_URL}/tasks/${data.id}`, request)
+		return fetch(`${API_URL}/steps/${data.id}`, request)
 			.then(response => response.json())
 			.catch(error => {
-				console.log('[TaskService][updateTask] ERROR: ', error)
+				console.log('[StepService][updateStep] ERROR: ', error)
 			})
 	},
-	deleteTask(id) {
+	deleteStep(id) {
 		const request = {
 			method: 'DELETE',
 			body: JSON.stringify({ id: id }),
 			headers: { 'Content-Type': 'application/json' }
 		}
-		return fetch(`${API_URL}/tasks/${id}`, request)
+		return fetch(`${API_URL}/steps/${id}`, request)
 			.then(response => response.json())
 			.catch(error => {
-				console.log('[TaskService][deleteTask] ERROR: ', error)
+				console.log('[StepService][deleteStep] ERROR: ', error)
 			})
 	}
 }
 
-export default TaskService;
+export default StepService;

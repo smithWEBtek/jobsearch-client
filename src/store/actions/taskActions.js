@@ -1,5 +1,5 @@
-import * as actionTypes from './actionTypes'
-import TaskService from '../services/TaskService'
+import * as actionTypes from './ActionTypes'
+import TaskService from '../Services/TaskService'
 
 //-----CREATE TASK ACTIONS-----------------------------
 export const createTaskStart = () => {

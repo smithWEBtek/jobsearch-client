@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import * as actions from '../store/actions/index'
+import * as actions from '../Store/Actions/Index'
+
 import { connect } from 'react-redux';
 import Company from './Company'
 // import CompanyViewer from '../Companies/CompanyViewer'
@@ -11,6 +12,7 @@ class Companies extends Component {
 	}
 
 	componentDidMount() {
+		console.log(this.props);
 		this.props.onFetchCompanies()
 	}
 
@@ -22,6 +24,7 @@ class Companies extends Component {
 
 	render() {
 		let renderedCompanies = this.props.companies.map((company, index) => {
+
 			return (
 				<div key={index}>
 					<Company company={company} />

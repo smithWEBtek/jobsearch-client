@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import * as actions from '../store/actions/index'
+import * as actions from '../Store/Actions/Index'
+
 import { connect } from 'react-redux';
 import Log from './Log'
 // import LogViewer from '../Logs/LogViewer'
@@ -39,7 +40,7 @@ class Logs extends Component {
 
 const mapStateToProps = state => {
 	return {
-		logs: state.com.logs
+		logs: state.log.logs
 	}
 }
 

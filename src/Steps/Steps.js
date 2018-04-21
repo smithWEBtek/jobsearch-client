@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import * as actions from '../store/actions/index'
+import * as actions from '../Store/Actions/Index'
+
 import { connect } from 'react-redux';
 import Step from './Step'
 // import StepViewer from '../Steps/StepViewer'
@@ -39,7 +40,7 @@ class Steps extends Component {
 
 const mapStateToProps = state => {
 	return {
-		stp: state.stp.steps
+		steps: state.stp.steps
 	}
 }
 

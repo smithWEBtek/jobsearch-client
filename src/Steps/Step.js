@@ -7,8 +7,9 @@ const Step = (props) => {
 			<Card
 				key={props.step.id}
 				className='Card'>
-				{props.step.name}
-				{props.step.category}
+				{/* {props.step.name}
+				{props.step.category} */}
+				<p>step.....</p>
 			</Card>
 		</div>
 	);

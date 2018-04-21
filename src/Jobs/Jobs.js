@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import * as actions from '../store/actions/index'
+import * as actions from '../Store/Actions/Index'
+
 import { connect } from 'react-redux';
 import Job from './Job'
 // import JobViewer from '../Jobs/JobViewer'

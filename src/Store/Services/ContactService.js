@@ -1,50 +1,50 @@
 // const API_URL = 'http://127.0.0.1:3001/api'
 const API_URL = 'https://swt-jobsearch-api.herokuapp.com/api'
 
-const JobService = {
-	createJob(job) {
+const ContactService = {
+	createContact(contact) {
 		const request = {
 			method: 'POST',
-			body: JSON.stringify({ job: job }),
+			body: JSON.stringify({ contact: contact }),
 			headers: { 'Content-Type': 'application/json' }
 		}
-		return fetch(`${API_URL}/jobs`, request)
+		return fetch(`${API_URL}/contacts`, request)
 			.then(response => response.json())
 			.catch(error => {
-				console.log('[JobService][createJob] ERROR: ', error)
+				console.log('[ContactService][createContact] ERROR: ', error)
 			})
 	},
-	fetchJobs() {
-		return fetch(`${API_URL}/jobs`)
+	fetchContacts() {
+		return fetch(`${API_URL}/contacts`)
 			.then(response => response.json())
 			.catch(error => {
-				console.log('[JobService][fetchJobs] ERROR: ', error)
+				console.log('[ContactService][fetchContacts] ERROR: ', error)
 			})
 	},
-	updateJob(data) {
+	updateContact(data) {
 		const request = {
 			method: 'PATCH',
-			body: JSON.stringify({ job: data }),
+			body: JSON.stringify({ contact: data }),
 			headers: { 'Content-Type': 'application/json' }
 		}
-		return fetch(`${API_URL}/jobs/${data.id}`, request)
+		return fetch(`${API_URL}/contacts/${data.id}`, request)
 			.then(response => response.json())
 			.catch(error => {
-				console.log('[JobService][updateJob] ERROR: ', error)
+				console.log('[ContactService][updateContact] ERROR: ', error)
 			})
 	},
-	deleteJob(id) {
+	deleteContact(id) {
 		const request = {
 			method: 'DELETE',
 			body: JSON.stringify({ id: id }),
 			headers: { 'Content-Type': 'application/json' }
 		}
-		return fetch(`${API_URL}/jobs/${id}`, request)
+		return fetch(`${API_URL}/contacts/${id}`, request)
 			.then(response => response.json())
 			.catch(error => {
-				console.log('[JobService][deleteJob] ERROR: ', error)
+				console.log('[ContactService][deleteContact] ERROR: ', error)
 			})
 	}
 }
 
-export default JobService;
+export default ContactService;

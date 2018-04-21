@@ -4,46 +4,46 @@ export {
 	deleteCompany,
 	updateCompany,
 	fetchCompanies
-} from './companyActions'
+} from './CompanyActions'
 
 export {
 	createContact,
 	deleteContact,
 	updateContact,
 	fetchContacts
-} from './contactActions'
+} from './ContactActions'
 
 export {
 	createJob,
 	deleteJob,
 	updateJob,
 	fetchJobs
-} from './jobActions'
+} from './JobActions'
 
 export {
 	createLog,
 	deleteLog,
 	updateLog,
 	fetchLogs
-} from './logActions'
+} from './LogActions'
 
 export {
 	createStep,
 	deleteStep,
 	updateStep,
 	fetchSteps
-} from './stepActions'
+} from './StepActions'
 
 export {
 	createTask,
 	deleteTask,
 	updateTask,
 	fetchTasks
-} from './taskActions'
+} from './TaskActions'
 
 export {
 	createUser,
 	deleteUser,
 	updateUser,
 	fetchUsers
-} from './userActions'
+} from './UserActions'

@@ -1,5 +1,5 @@
-import * as actionTypes from './actionTypes'
-import ContactService from '../services/ContactService'
+import * as actionTypes from './ActionTypes'
+import ContactService from '../Services/ContactService'
 
 //-----CREATE CONTACT ACTIONS-----------------------------
 export const createContactStart = () => {

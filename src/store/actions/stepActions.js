@@ -1,5 +1,5 @@
-import * as actionTypes from './actionTypes'
-import StepService from '../services/StepService'
+import * as actionTypes from './ActionTypes'
+import StepService from '../Services/StepService'
 
 //-----CREATE STEP ACTIONS-----------------------------
 export const createStepStart = () => {
