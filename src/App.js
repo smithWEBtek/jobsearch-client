@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css'
+
+import './App.css'
+
 import Companies from '../src/Companies/Companies'
 import Contacts from '../src/Contacts/Contacts'
 import Jobs from '../src/Jobs/Jobs'
@@ -21,7 +23,7 @@ class App extends Component {
 			<div>
 				<Container>
 
-					<div className='col'>
+					<div className='col MainNav'>
 						<MainNav />
 					</div>
 

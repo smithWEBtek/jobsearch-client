@@ -1,3 +1,8 @@
+#MainNav {
+	background-color: rgb(148, 190, 214);
+	border: 2px solid rgb(17, 69, 136);
+}
+
 .App {
   text-align: center;
 }
