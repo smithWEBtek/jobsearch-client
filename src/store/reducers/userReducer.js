@@ -10,95 +10,95 @@ const initialState = {
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
 
-		//-----CREATE COMPANY-----------------------------
-		case actionTypes.CREATE_COMPANY_START:
+		//-----CREATE USER-----------------------------
+		case actionTypes.CREATE_USER_START:
 			return Object.assign({}, state, { loading: true })
 
-		case actionTypes.CREATE_COMPANY_SUCCESS:
+		case actionTypes.CREATE_USER_SUCCESS:
 			return Object.assign({}, state, { loading: false })
 
-		case actionTypes.CREATE_COMPANY_FAIL:
+		case actionTypes.CREATE_USER_FAIL:
 			return Object.assign({}, state, {
 				error: action.error,
 				loading: false,
 				message: action.type
 			})
 
-		case actionTypes.CREATE_COMPANY:
-			const newCompany = action.companyData
+		case actionTypes.CREATE_USER:
+			const newUser = action.companyData
 			return Object.assign({}, state, {
-				companies: state.companies.concat(newCompany)
+				users: state.users.concat(newUser)
 			})
 
 
-		//-----FETCH COMPANIES-----------------------------
-		case actionTypes.FETCH_COMPANIES_START:
+		//-----FETCH USERS-----------------------------
+		case actionTypes.FETCH_USERS_START:
 			return Object.assign({}, state, { loading: true })
 
-		case actionTypes.FETCH_COMPANIES_SUCCESS:
+		case actionTypes.FETCH_USERS_SUCCESS:
 			return Object.assign({}, state, { loading: false })
 
-		case actionTypes.FETCH_COMPANIES_FAIL:
+		case actionTypes.FETCH_USERS_FAIL:
 			return Object.assign({}, state, {
 				error: action.error,
 				loading: false,
 				message: action.type
 			})
 
-		case actionTypes.FETCH_COMPANIES:
-			const companies = action.companiesList
+		case actionTypes.FETCH_USERS:
+			const users = action.usersList
 			return Object.assign({}, state, {
-				companies: companies
+				users: users
 			})
 
 
-		//-----UPDATE COMPANY-----------------------------
-		case actionTypes.UPDATE_COMPANY_START:
+		//-----UPDATE USER-----------------------------
+		case actionTypes.UPDATE_USER_START:
 			return Object.assign({}, state, { loading: true })
 
-		case actionTypes.UPDATE_COMPANY_SUCCESS:
+		case actionTypes.UPDATE_USER_SUCCESS:
 			return Object.assign({}, state, { loading: false })
 
-		case actionTypes.UPDATE_COMPANY_FAIL:
+		case actionTypes.UPDATE_USER_FAIL:
 			return Object.assign({}, state, {
 				error: action.error,
 				loading: false,
 				message: action.type
 			})
 
-		case actionTypes.UPDATE_COMPANY:
-			//const companyData = action.updatedCompanyData
+		case actionTypes.UPDATE_USER:
+			//const companyData = action.updatedUserData
 			//debugger
-			//const companyIndex = state.companies.findIndex(company => company.id === companyData.id);
+			//const companyIndex = state.users.findIndex(company => company.id === companyData.id);
 			// const stateTemp = {
 			//   ...state,
-			//   companies: [
-			//     ...state.companies.slice(0, companyIndex),
-			//     ...state.companies.slice(companyIndex + 1, state.companies.length)
+			//   users: [
+			//     ...state.users.slice(0, companyIndex),
+			//     ...state.users.slice(companyIndex + 1, state.users.length)
 			//   ]
 			// };
-			const updatedCompaniesArray = state.companies.map(company => company.id === action.updatedCompanyData.id ? action.updatedCompanyData : company)
-			return Object.assign({}, state, { companies: updatedCompaniesArray })
+			const updatedCompaniesArray = state.users.map(company => company.id === action.updatedUserData.id ? action.updatedUserData : company)
+			return Object.assign({}, state, { users: updatedCompaniesArray })
 
 
-		//-----DELETE COMPANY-----------------------------
-		case actionTypes.DELETE_COMPANY_START:
+		//-----DELETE USER-----------------------------
+		case actionTypes.DELETE_USER_START:
 			return Object.assign({}, state, { loading: true })
 
-		case actionTypes.DELETE_COMPANY_SUCCESS:
+		case actionTypes.DELETE_USER_SUCCESS:
 			return Object.assign({}, state, { loading: false })
 
-		case actionTypes.DELETE_COMPANY_FAIL:
+		case actionTypes.DELETE_USER_FAIL:
 			return Object.assign({}, state, {
 				error: action.error,
 				loading: false,
 				message: action.type
 			})
 
-		case actionTypes.DELETE_COMPANY:
-			const updatedCompanies = state.companies.filter(company => company.id !== action.id);
+		case actionTypes.DELETE_USER:
+			const updatedCompanies = state.users.filter(company => company.id !== action.id);
 			return Object.assign({}, state, {
-				companies: updatedCompanies
+				users: updatedCompanies
 			})
 
 		//----- DEFAULT --------------------------------
