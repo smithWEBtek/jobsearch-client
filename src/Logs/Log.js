@@ -8,7 +8,7 @@ const Log = (props) => {
 				key={props.log.id}
 				className='Card'>
 				{props.log.note}
-				{props.log.task.description}
+				{/* {props.log.task.description} */}
 			</Card>
 		</div>
 	);

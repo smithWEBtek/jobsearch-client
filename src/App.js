@@ -23,48 +23,48 @@ class App extends Component {
 			<div>
 				<Container>
 
-					<div className='col MainNav'>
+					<div className='col DataBorder'>
 						<MainNav />
 					</div>
 
 					<div className='col'>
-						<h3>Companies</h3>
-						{/* <Companies /> */}
+						<h4 className='DataBackGround'>Companies</h4>
+						<Companies />
 					</div>
 
 					<div className='col'>
-						<h3>Users</h3>
-						<Users />
-					</div>
-					<br />
-
-					<div className='col'>
-						<h3>Jobs</h3>
-						<Jobs />
-					</div>
-					<br />
-
-					<div className='col'>
-						<h3>Contacts</h3>
+						<h4 className='DataBackGround'>Contacts</h4>
 						<Contacts />
 					</div>
 					<br />
 
 					<div className='col'>
-						<h3>Tasks</h3>
+						<h4 className='DataBackGround'>Jobs</h4>
+						<Jobs />
+					</div>
+					<br />
+
+					<div className='col'>
+						<h4 className='DataBackGround'>Users</h4>
+						<Users />
+					</div>
+					<br />
+
+					<div className='col'>
+						<h4 className='DataBackGround'>Steps</h4>
+						<Steps />
+					</div>
+					<br />
+
+					<div className='col'>
+						<h4 className='DataBackGround'>Tasks</h4>
 						<Tasks />
 					</div>
 					<br />
 
 					<div className='col'>
-						<h3>Logs</h3>
+						<h4 className='DataBackGround'>Logs</h4>
 						<Logs />
-					</div>
-					<br />
-
-					<div className='col'>
-						<h3>Steps</h3>
-						<Steps />
 					</div>
 					<br />
 

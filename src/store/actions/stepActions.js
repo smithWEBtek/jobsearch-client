@@ -16,7 +16,7 @@ export const createStep = (data, history) => {
 		dispatch(createStepStart())
 		StepService.createStep(data)
 			.then(response => {
-				dispatch({ type: actionTypes.CREATE_STEP, companyData: response })
+				dispatch({ type: actionTypes.CREATE_STEP, stepData: response })
 				history.push(`/steps/${response.id}`)
 				dispatch(createStepSuccess())
 			})
@@ -27,15 +27,15 @@ export const createStep = (data, history) => {
 }
 
 
-//-----FETCH COMPANIES ACTIONS-----------------------------
+//-----FETCH STEPS ACTIONS-----------------------------
 export const fetchStepsStart = () => {
-	return { type: actionTypes.FETCH_COMPANIES_START }
+	return { type: actionTypes.FETCH_STEPS_START }
 }
 export const fetchStepsSuccess = (steps) => {
-	return { type: actionTypes.FETCH_COMPANIES_SUCCESS, stepsList: steps }
+	return { type: actionTypes.FETCH_STEPS_SUCCESS, stepsList: steps }
 }
 export const fetchStepsFail = (error) => {
-	return { type: actionTypes.FETCH_COMPANIES_FAIL, error: error }
+	return { type: actionTypes.FETCH_STEPS_FAIL, error: error }
 }
 export const fetchSteps = () => {
 	return dispatch => {
@@ -43,7 +43,7 @@ export const fetchSteps = () => {
 		StepService.fetchSteps()
 			.then(response => {
 
-				dispatch({ type: actionTypes.FETCH_COMPANIES, stepsList: response })
+				dispatch({ type: actionTypes.FETCH_STEPS, stepsList: response })
 				dispatch(fetchStepsSuccess())
 			})
 			.catch(error => {

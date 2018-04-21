@@ -7,8 +7,7 @@ const User = (props) => {
 			<Card
 				key={props.user.id}
 				className='Card'>
-				{props.user.name}
-				{/* {props.user.fname} {props.user.lname} */}
+				{props.user.email}
 			</Card>
 		</div>
 	);

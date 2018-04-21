@@ -23,13 +23,13 @@ class MainNav extends Component {
 							<NavLink href="/components/">Jobs</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href="/components/">Tasks</NavLink>
-						</NavItem>
-						<NavItem>
 							<NavLink href="/components/">Users</NavLink>
 						</NavItem>
 						<NavItem>
 							<NavLink href="/components/">Steps</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink href="/components/">Tasks</NavLink>
 						</NavItem>
 						<NavItem>
 							<NavLink href="/components/">Logs</NavLink>

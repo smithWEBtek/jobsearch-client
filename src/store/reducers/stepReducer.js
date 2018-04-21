@@ -10,95 +10,95 @@ const initialState = {
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
 
-		//-----CREATE COMPANY-----------------------------
-		case actionTypes.CREATE_COMPANY_START:
+		//-----CREATE STEP-----------------------------
+		case actionTypes.CREATE_STEP_START:
 			return Object.assign({}, state, { loading: true })
 
-		case actionTypes.CREATE_COMPANY_SUCCESS:
+		case actionTypes.CREATE_STEP_SUCCESS:
 			return Object.assign({}, state, { loading: false })
 
-		case actionTypes.CREATE_COMPANY_FAIL:
+		case actionTypes.CREATE_STEP_FAIL:
 			return Object.assign({}, state, {
 				error: action.error,
 				loading: false,
 				message: action.type
 			})
 
-		case actionTypes.CREATE_COMPANY:
-			const newCompany = action.companyData
+		case actionTypes.CREATE_STEP:
+			const newStep = action.stepData
 			return Object.assign({}, state, {
-				companies: state.companies.concat(newCompany)
+				steps: state.steps.concat(newStep)
 			})
 
 
-		//-----FETCH COMPANIES-----------------------------
-		case actionTypes.FETCH_COMPANIES_START:
+		//-----FETCH STEPS-----------------------------
+		case actionTypes.FETCH_STEPS_START:
 			return Object.assign({}, state, { loading: true })
 
-		case actionTypes.FETCH_COMPANIES_SUCCESS:
+		case actionTypes.FETCH_STEPS_SUCCESS:
 			return Object.assign({}, state, { loading: false })
 
-		case actionTypes.FETCH_COMPANIES_FAIL:
+		case actionTypes.FETCH_STEPS_FAIL:
 			return Object.assign({}, state, {
 				error: action.error,
 				loading: false,
 				message: action.type
 			})
 
-		case actionTypes.FETCH_COMPANIES:
-			const companies = action.companiesList
+		case actionTypes.FETCH_STEPS:
+			const steps = action.stepsList
 			return Object.assign({}, state, {
-				companies: companies
+				steps: steps
 			})
 
 
-		//-----UPDATE COMPANY-----------------------------
-		case actionTypes.UPDATE_COMPANY_START:
+		//-----UPDATE STEP-----------------------------
+		case actionTypes.UPDATE_STEP_START:
 			return Object.assign({}, state, { loading: true })
 
-		case actionTypes.UPDATE_COMPANY_SUCCESS:
+		case actionTypes.UPDATE_STEP_SUCCESS:
 			return Object.assign({}, state, { loading: false })
 
-		case actionTypes.UPDATE_COMPANY_FAIL:
+		case actionTypes.UPDATE_STEP_FAIL:
 			return Object.assign({}, state, {
 				error: action.error,
 				loading: false,
 				message: action.type
 			})
 
-		case actionTypes.UPDATE_COMPANY:
-			//const companyData = action.updatedCompanyData
+		case actionTypes.UPDATE_STEP:
+			//const stepData = action.updatedStepData
 			//debugger
-			//const companyIndex = state.companies.findIndex(company => company.id === companyData.id);
+			//const stepIndex = state.steps.findIndex(step => step.id === stepData.id);
 			// const stateTemp = {
 			//   ...state,
-			//   companies: [
-			//     ...state.companies.slice(0, companyIndex),
-			//     ...state.companies.slice(companyIndex + 1, state.companies.length)
+			//   steps: [
+			//     ...state.steps.slice(0, stepIndex),
+			//     ...state.steps.slice(stepIndex + 1, state.steps.length)
 			//   ]
 			// };
-			const updatedCompaniesArray = state.companies.map(company => company.id === action.updatedCompanyData.id ? action.updatedCompanyData : company)
-			return Object.assign({}, state, { companies: updatedCompaniesArray })
+			const updatedStepsArray = state.steps.map(step => step.id === action.updatedStepData.id ? action.updatedStepData : step)
+			return Object.assign({}, state, { steps: updatedStepsArray })
 
 
-		//-----DELETE COMPANY-----------------------------
-		case actionTypes.DELETE_COMPANY_START:
+		//-----DELETE STEP-----------------------------
+		case actionTypes.DELETE_STEP_START:
 			return Object.assign({}, state, { loading: true })
 
-		case actionTypes.DELETE_COMPANY_SUCCESS:
+		case actionTypes.DELETE_STEP_SUCCESS:
 			return Object.assign({}, state, { loading: false })
 
-		case actionTypes.DELETE_COMPANY_FAIL:
+		case actionTypes.DELETE_STEP_FAIL:
 			return Object.assign({}, state, {
 				error: action.error,
 				loading: false,
 				message: action.type
 			})
 
-		case actionTypes.DELETE_COMPANY:
-			const updatedCompanies = state.companies.filter(company => company.id !== action.id);
+		case actionTypes.DELETE_STEP:
+			const updatedSteps = state.steps.filter(step => step.id !== action.id);
 			return Object.assign({}, state, {
-				companies: updatedCompanies
+				steps: updatedSteps
 			})
 
 		//----- DEFAULT --------------------------------

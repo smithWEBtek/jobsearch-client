@@ -7,7 +7,7 @@ const Task = (props) => {
 			<Card
 				key={props.task.id}
 				className='Card'>
-				{props.task.due_date}: {props.task.description}
+				{props.task.description}
 			</Card>
 		</div>
 	);

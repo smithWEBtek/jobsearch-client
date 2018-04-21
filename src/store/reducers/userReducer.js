@@ -25,7 +25,7 @@ const reducer = (state = initialState, action) => {
 			})
 
 		case actionTypes.CREATE_USER:
-			const newUser = action.companyData
+			const newUser = action.userData
 			return Object.assign({}, state, {
 				users: state.users.concat(newUser)
 			})
@@ -67,17 +67,17 @@ const reducer = (state = initialState, action) => {
 			})
 
 		case actionTypes.UPDATE_USER:
-			//const companyData = action.updatedUserData
+			//const userData = action.updatedUserData
 			//debugger
-			//const companyIndex = state.users.findIndex(company => company.id === companyData.id);
+			//const userIndex = state.users.findIndex(user => user.id === userData.id);
 			// const stateTemp = {
 			//   ...state,
 			//   users: [
-			//     ...state.users.slice(0, companyIndex),
-			//     ...state.users.slice(companyIndex + 1, state.users.length)
+			//     ...state.users.slice(0, userIndex),
+			//     ...state.users.slice(userIndex + 1, state.users.length)
 			//   ]
 			// };
-			const updatedCompaniesArray = state.users.map(company => company.id === action.updatedUserData.id ? action.updatedUserData : company)
+			const updatedCompaniesArray = state.users.map(user => user.id === action.updatedUserData.id ? action.updatedUserData : user)
 			return Object.assign({}, state, { users: updatedCompaniesArray })
 
 
@@ -96,7 +96,7 @@ const reducer = (state = initialState, action) => {
 			})
 
 		case actionTypes.DELETE_USER:
-			const updatedCompanies = state.users.filter(company => company.id !== action.id);
+			const updatedCompanies = state.users.filter(user => user.id !== action.id);
 			return Object.assign({}, state, {
 				users: updatedCompanies
 			})

@@ -16,7 +16,8 @@ const StepService = {
 	},
 	fetchSteps() {
 		return fetch(`${API_URL}/steps`)
-			.then(response => response.json())
+			.then(response => response.json()
+			)
 			.catch(error => {
 				console.log('[StepService][fetchSteps] ERROR: ', error)
 			})
