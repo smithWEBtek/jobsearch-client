@@ -16,8 +16,8 @@ class Steps extends Component {
 	}
 
 	// handleClickStep = (code) => {
-	// 	this.setState({
-	// 		results_url: 'http://netflix.com/browse/step/' + code
+	// steps_due: [],
+	// steps_complete: []
 	// 	})
 	// }
 
