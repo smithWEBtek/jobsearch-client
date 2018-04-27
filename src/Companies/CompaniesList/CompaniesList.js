@@ -1,0 +1,44 @@
+import React from 'react'
+import CompanyRow from './CompanyRow'
+import { Table } from 'reactstrap'
+import './CompaniesList.css'
+
+const CompaniesList = (props) => {
+
+	let sortedCompanies = props.companies.sort((a, b) => a.name.toLowerCase() < b.name.toLowerCase() ? -1 : a.name.toLowerCase() > b.name.toLowerCase() ? 1 : 0)
+
+	let renderCompanies = sortedCompanies.map((company, index) => {
+		return (
+			<CompanyRow
+				key={index}
+				company={company}
+				editCompany={props.editCompany}
+				deleteCompany={props.deleteCompany}
+			/>
+		)
+	})
+
+	return (
+		<div>
+			<Table striped size="sm" className="CompaniesList">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>City</th>
+						<th>State</th>
+						<th>URL</th>
+						<th>Show</th>
+						<th>Edit</th>
+						<th>X</th>
+					</tr>
+				</thead>
+				<tbody>
+					{renderCompanies}
+				</tbody>
+			</Table>
+		</div>
+	)
+}
+
+export default CompaniesList
