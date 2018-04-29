@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import Aux from '../../HOC/Aux/Aux'
 
 const CompanyRow = (props) => {
-	console.log('[CompanyRow props]', props);
 
 	return (
 		<Aux>

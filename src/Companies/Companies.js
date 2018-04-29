@@ -48,15 +48,6 @@ class Companies extends Component {
 		})
 	}
 
-	editCompanyUpdate = (data) => {
-		let { history } = this.props
-		this.props.onUpdateCompany(data, history)
-		this.setState({
-			editCompany: false,
-			company: null
-		})
-	}
-
 	closeEditCompanyForm = () => {
 		this.setState({
 			editCompany: false,
@@ -78,7 +69,7 @@ class Companies extends Component {
 				<hr />
 				<div>
 					<CompaniesList
-						companies={this.props.companies}
+						companies={companies}
 						deleteCompany={this.deleteCompany}
 						editCompany={(data) => this.editCompanyUpdate(data)}
 					/>
@@ -95,13 +86,13 @@ class Companies extends Component {
 				</Modal>
 
 				{/*********EDIT COMPANY MODAL********************/}
-				<button onClick={this.editCompanyForm}>Edit Company</button>
 				<Modal
 					show={this.state.editCompany}
 					modalClosed={this.closeEditCompanyForm}>
 					{this.state.editCompany ?
 						<EditCompany
-							company_id={this.state.company.id}
+							company={this.state.company}
+							update={(data, history) => this.props.onUpdateCompany(data, history)}
 							close={() => this.closeEditCompanyForm()}
 						/> : null}
 
@@ -116,16 +107,6 @@ class Companies extends Component {
 						<Route path={match.url} exact />
 					</Switch>
 				</div>
-				<div>
-					<h5 className="IndexHeaderBackground">ALL companies</h5>
-					<CompaniesList
-						companies={companies}
-						edit={(id) => this.showEditCompanyForm(id)}
-						deleteCompany={(id) => this.deleteCompany(id)}
-						likeCompany={(id) => this.likeCompany(id)}
-					/>
-				</div>
-				<hr />
 			</Container>
 		)
 	}
@@ -141,7 +122,8 @@ const mapDispatchToProps = dispatch => {
 	return {
 		onFetchCompanies: () => dispatch(actions.fetchCompanies()),
 		onDeleteCompany: (id, history) => dispatch(actions.deleteCompany(id, history)),
-		onUpdateCompany: (id, history) => dispatch(actions.updateCompany(id, history))
+		onCreateCompany: (data) => dispatch(actions.createCompany(data)),
+		onUpdateCompany: (data, history) => dispatch(actions.updateCompany(data, history))
 	}
 }
 
