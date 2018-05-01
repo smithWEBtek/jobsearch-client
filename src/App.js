@@ -32,48 +32,48 @@ class App extends Component {
 
 					<div className='col'>
 						<h4 className='DataBackGround'>Companies</h4>
-						<Companies />
+						{/* <Companies /> */}
 						<Route path="/companies" component={Companies} />
 					</div>
 
 					<div className='col'>
 						<h4 className='DataBackGround'>Contacts</h4>
-						<Contacts />
+						{/* <Contacts /> */}
 						<Route path="/contacts" component={Contacts} />
 					</div>
 					<br />
 
 					<div className='col'>
 						<h4 className='DataBackGround'>Jobs</h4>
-						<Jobs />
+						{/* <Jobs /> */}
 						<Route path="/jobs" component={Jobs} />
 					</div>
 					<br />
 
 					<div className='col'>
 						<h4 className='DataBackGround'>Users</h4>
-						<Users />
+						{/* <Users /> */}
 						<Route path="/users" component={Users} />
 					</div>
 					<br />
 
 					<div className='col'>
 						<h4 className='DataBackGround'>Steps</h4>
-						<Steps />
+						{/* <Steps /> */}
 						<Route path="/steps" component={Steps} />
 					</div>
 					<br />
 
 					<div className='col'>
 						<h4 className='DataBackGround'>Tasks</h4>
-						<Tasks />
+						{/* <Tasks /> */}
 						<Route path="/tasks" component={Tasks} />
 					</div>
 					<br />
 
 					<div className='col'>
 						<h4 className='DataBackGround'>Logs</h4>
-						<Logs />
+						{/* <Logs /> */}
 						<Route path="/logs" component={Logs} />
 					</div>
 					<br />

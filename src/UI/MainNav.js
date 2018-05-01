@@ -14,25 +14,25 @@ class MainNav extends Component {
 				<Navbar color="light" light expand="md">
 					<Nav className="ml-auto" navbar>
 						<NavItem>
-							<NavLink href="/components/">Companies</NavLink>
+							<NavLink href="/companies/">Companies</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href="/components/">Contacts</NavLink>
+							<NavLink href="/contacts/">Contacts</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href="/components/">Jobs</NavLink>
+							<NavLink href="/jobs/">Jobs</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href="/components/">Users</NavLink>
+							<NavLink href="/users/">Users</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href="/components/">Steps</NavLink>
+							<NavLink href="/steps/">Steps</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href="/components/">Tasks</NavLink>
+							<NavLink href="/tasks/">Tasks</NavLink>
 						</NavItem>
 						<NavItem>
-							<NavLink href="/components/">Logs</NavLink>
+							<NavLink href="/logs/">Logs</NavLink>
 						</NavItem>
 					</Nav>
 				</Navbar>
