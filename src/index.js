@@ -5,9 +5,6 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 
-import 'bootstrap/dist/css/bootstrap.css'
-
-
 import CompanyReducer from './Store/Reducers/CompanyReducer'
 import ContactReducer from './Store/Reducers/ContactReducer'
 import JobReducer from './Store/Reducers/JobReducer'
@@ -18,6 +15,9 @@ import UserReducer from './Store/Reducers/UserReducer'
 
 import App from './App'
 import classes from './index.css'
+import 'bootstrap/dist/css/bootstrap.css'
+
+require('dotenv').config()
 
 const rootReducer = combineReducers({
 	com: CompanyReducer,

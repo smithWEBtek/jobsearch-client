@@ -1,5 +1,4 @@
-// const API_URL = 'http://127.0.0.1:3001/api'
-const API_URL = 'https://swt-jobsearch-api.herokuapp.com/api'
+const API_URL = process.env.REACT_APP_DEV_API_URL
 
 const JobService = {
 	createJob(job) {
