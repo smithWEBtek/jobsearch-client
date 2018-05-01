@@ -5,7 +5,10 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 
+// import CompanyReducer from './Store/Reducers/CompanyReducer'
 import CompanyReducer from './Store/Reducers/CompanyReducer'
+
+
 import ContactReducer from './Store/Reducers/ContactReducer'
 import JobReducer from './Store/Reducers/JobReducer'
 import LogReducer from './Store/Reducers/LogReducer'
