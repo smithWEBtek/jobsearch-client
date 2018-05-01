@@ -1,5 +1,6 @@
 const API_URL = process.env.REACT_APP_DEV_API_URL
 
+
 const UserService = {
 	createUser(user) {
 		const request = {

@@ -98,7 +98,6 @@ class CreateCompany extends Component {
 	}
 }
 
-
 const mapStateToProps = state => {
 	return {
 		companies: state.com.companies
