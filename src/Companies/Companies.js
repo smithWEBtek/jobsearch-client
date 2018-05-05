@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import CreateCompany from './CreateCompany/CreateCompany'
 import EditCompany from './EditCompany/EditCompany'
 import Company from './Company/Company'
-
+import Spinner from '../UI/Spinner/Spinner'
 
 class Companies extends Component {
 	state = {
@@ -64,17 +64,23 @@ class Companies extends Component {
 	render() {
 		const { match, companies } = this.props
 
+		const renderedCompanies = <Spinner />
+
+
+
 		return (
 			<Container>
 				<hr />
 				{/**********COMPANIES LIST************************/}
-				<div>
-					<CompaniesList
-						companies={companies}
-						deleteCompany={this.deleteCompany}
-						edit={(id) => this.showEditCompanyForm(id)}
-					/>
-				</div >
+
+				{this.props.companies ?
+					<div>
+						<CompaniesList
+							companies={companies}
+							deleteCompany={this.deleteCompany}
+							edit={(id) => this.showEditCompanyForm(id)}
+						/>
+					</div > : renderedCompanies}
 
 				{/*********CREATE COMPANY MODAL********************/}
 				<button onClick={this.createCompanyForm}>Add Company</button>
