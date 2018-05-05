@@ -64,12 +64,16 @@ export const updateCompanyFail = (error) => {
 	return { type: actionTypes.UPDATE_COMPANY_FAIL, error: error }
 }
 export const updateCompany = (data, history) => {
+
+	console.log('[data @ CompanyActions.updateCompany]', data)
+
 	return dispatch => {
 		dispatch(updateCompanyStart())
 		CompanyService.updateCompany(data)
 			.then(response => {
 				dispatch({ type: actionTypes.UPDATE_COMPANY, updatedCompanyData: response })
-				history.goBack()
+				// history.goBack()
+				history.push('/')
 				dispatch(updateCompanySuccess())
 			})
 			.catch(error => {

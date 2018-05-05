@@ -1,5 +1,5 @@
 import React from 'react'
-import CompanyRow from './CompanyRow'
+import CompanyRow from '../CompanyRow/CompanyRow'
 import { Table } from 'reactstrap'
 import './CompaniesList.css'
 
@@ -12,7 +12,7 @@ const CompaniesList = (props) => {
 			<CompanyRow
 				key={index}
 				company={company}
-				editCompany={props.editCompany}
+				edit={props.edit}
 				deleteCompany={props.deleteCompany}
 			/>
 		)

@@ -77,6 +77,9 @@ const reducer = (state = initialState, action) => {
 			//     ...state.companies.slice(companyIndex + 1, state.companies.length)
 			//   ]
 			// };
+
+			// debugger;
+
 			const updatedCompaniesArray = state.companies.map(company => company.id === action.updatedCompanyData.id ? action.updatedCompanyData : company)
 			return Object.assign({}, state, { companies: updatedCompaniesArray })
 

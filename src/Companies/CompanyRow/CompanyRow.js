@@ -18,19 +18,22 @@ const CompanyRow = (props) => {
 				</td>
 				<td>{props.company.city}</td>
 				<td>{props.company.state}</td>
-				<td>{props.company.url}</td>
+				<td>
+					<Link
+						to={props.company.url}
+						target='blank'>{props.company.name}</Link>
+				</td>
 				<td><button
 					type='button'
 					className="Success">
 					<Link
 						to={`/companies/${props.company.id}`}
-						key={props.company.id}
-					>show</Link>
+						key={props.company.id}>show</Link>
 				</button></td>
 				<td><button
 					type='button'
 					className="Edit"
-					onClick={() => props.editCompany(props.company.id)}>edit
+					onClick={() => props.edit(props.company.id)}>edit
         </button></td>
 				<td><button
 					onClick={() => props.deleteCompany(props.company.id)}

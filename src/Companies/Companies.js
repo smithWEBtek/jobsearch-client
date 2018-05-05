@@ -67,11 +67,12 @@ class Companies extends Component {
 		return (
 			<Container>
 				<hr />
+				{/**********COMPANIES LIST************************/}
 				<div>
 					<CompaniesList
 						companies={companies}
 						deleteCompany={this.deleteCompany}
-						editCompany={(data) => this.editCompanyUpdate(data)}
+						edit={(id) => this.showEditCompanyForm(id)}
 					/>
 				</div >
 
@@ -89,16 +90,15 @@ class Companies extends Component {
 				<Modal
 					show={this.state.editCompany}
 					modalClosed={this.closeEditCompanyForm}>
-					{this.state.editCompany ?
+					{this.state.company ?
 						<EditCompany
 							company={this.state.company}
-							update={(data, history) => this.props.onUpdateCompany(data, history)}
+							edit={(id) => this.showEditCompanyForm(id)}
+							// update={(data, history) => this.props.onUpdateCompany(data, history)}
 							close={() => this.closeEditCompanyForm()}
 						/> : null}
-
 				</Modal>
 
-				{/**********COMPANIES LIST************************/}
 				<div>
 					<Switch>
 						<Route path={`${match.url}/:id/edit`} exact component={EditCompany} />

@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 import './EditCompany.css';
+import { connect } from 'react-redux'
+import * as actions from '../../Store/Actions/Index'
+import { withRouter } from 'react-router-dom'
+
+// company={this.state.company}
+// edit={(id) => this.showEditCompanyForm(id)}
+// update={(data, history) => this.props.onUpdateCompany(data, history)}
+// close={() => this.closeEditCompanyForm()}
+
 
 class EditCompany extends Component {
 	state = {
-		company: {},
+		// company: {},
 		id: '',
 		name: '',
 		city: '',
@@ -13,13 +22,21 @@ class EditCompany extends Component {
 	}
 
 	componentDidMount() {
-		this.setState({ company: this.props.company })
+		this.setState({
+			// company: this.props.company,
+			id: this.props.company.id,
+			name: this.props.company.name,
+			city: this.props.company.city,
+			state: this.props.company.state,
+			url: this.props.company.url,
+			about: this.props.company.about
+		})
 	}
 
 	handleChange = (e) => {
+		e.preventDefault()
 		const { name, value } = e.target;
 		this.setState({ [name]: value });
-		e.preventDefault()
 	}
 
 	handleCancel = () => {
@@ -27,9 +44,9 @@ class EditCompany extends Component {
 	}
 
 	handleSubmit = (e) => {
-		let data = this.state.company
 		let history = this.props.history
-		this.props.update(data, history)
+		let data = this.state
+		this.props.onUpdateCompany(data, history)
 	}
 
 	render() {
@@ -38,42 +55,35 @@ class EditCompany extends Component {
 			<div>
 				<p className="FormInstructions">Edit form and click 'Update Company'</p>
 				<form className="Form">
-					<p><label htmlFor="name">First name </label>
+					<p><label htmlFor="Name">Name </label>
 						<input
 							type="text"
 							name="name"
 							value={this.state.name}
 							onChange={this.handleChange}
 						/></p>
-					<p><label>Name</label>
-						<input
-							type="text"
-							name="name"
-							value={this.state.name}
-							onChange={this.handleChange}
-						/></p>
-					<p><label>City </label>
+					<p><label htmlFor="City">City </label>
 						<input
 							type="text"
 							name="city"
 							value={this.state.city}
 							onChange={this.handleChange}
 						/></p>
-					<p><label>State </label>
+					<p><label htmlFor="State">State </label>
 						<input
 							type="text"
 							name="state"
 							value={this.state.state}
 							onChange={this.handleChange}
 						/></p>
-					<p><label>Url</label>
+					<p><label htmlFor="Url">Url</label>
 						<input
 							type="text"
 							name="url"
 							value={this.state.url}
 							onChange={this.handleChange}
 						/></p>
-					<p><label>About</label>
+					<p><label htmlFor="About">About</label>
 						<input
 							type="text"
 							name="about"
@@ -97,4 +107,10 @@ class EditCompany extends Component {
 	}
 }
 
-export default EditCompany
+const mapDispatchToProps = dispatch => {
+	return {
+		onUpdateCompany: (data, history) => dispatch(actions.updateCompany(data, history))
+	}
+}
+
+export default connect(null, mapDispatchToProps)(withRouter(EditCompany))
