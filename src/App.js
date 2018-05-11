@@ -34,43 +34,36 @@ class App extends Component {
 						<NavLink to="/companies/">Companies</NavLink>
 						<Route path="/companies" component={Companies} />
 					</div>
-					<br />
 
 					<div className='col'>
 						<NavLink to="/contacts/">Contacts</NavLink>
 						<Route path="/contacts" component={Contacts} />
 					</div>
-					<br />
 
 					<div className='col'>
 						<NavLink to="/jobs/">Jobs</NavLink>
 						<Route path="/jobs" component={Jobs} />
 					</div>
-					<br />
 
 					<div className='col'>
 						<NavLink to="/users/">Users</NavLink>
 						<Route path="/users" component={Users} />
 					</div>
-					<br />
 
 					<div className='col'>
 						<NavLink to="/steps/">Steps</NavLink>
 						<Route path="/steps" component={Steps} />
 					</div>
-					<br />
 
 					<div className='col'>
 						<NavLink to="/tasks/">Tasks</NavLink>
 						<Route path="/tasks" component={Tasks} />
 					</div>
-					<br />
 
 					<div className='col'>
 						<NavLink to="/logs/">Logs</NavLink>
 						<Route path="/logs" component={Logs} />
 					</div>
-					<br />
 
 				</Container>
 			</div>
