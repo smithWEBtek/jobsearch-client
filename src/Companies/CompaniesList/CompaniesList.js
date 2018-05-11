@@ -20,7 +20,7 @@ const CompaniesList = (props) => {
 
 	return (
 		<div>
-			<Table striped className="CompaniesList">
+			<Table striped className="List">
 				<thead>
 					<tr>
 						<th>ID</th>

@@ -1,6 +1,7 @@
-.StudentsList {
-  color: black;
-  width: 100%;
+.List {
+  color: rgb(0, 0, 0);
+	width: 100%;
+	font-size: .8em;
 }
 
 .Form {
