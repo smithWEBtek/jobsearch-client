@@ -67,6 +67,16 @@ class Companies extends Component {
 		const renderedCompanies = <Spinner />
 		return (
 			<Container>
+
+				<div>
+					<Switch>
+						<Route path={`${match.url}/:id/edit`} exact component={EditCompany} />
+						<Route path={`${match.url}/new`} exact component={CreateCompany} />
+						<Route path={`${match.url}/:id`} exact component={Company} />
+						<Route path={match.url} exact />
+					</Switch>
+				</div>
+
 				<hr />
 				{/**********COMPANIES LIST************************/}
 
@@ -102,14 +112,6 @@ class Companies extends Component {
 						/> : null}
 				</Modal>
 
-				<div>
-					<Switch>
-						<Route path={`${match.url}/:id/edit`} exact component={EditCompany} />
-						<Route path={`${match.url}/new`} exact component={CreateCompany} />
-						<Route path={`${match.url}/:id`} exact component={Company} />
-						<Route path={match.url} exact />
-					</Switch>
-				</div>
 			</Container>
 		)
 	}
