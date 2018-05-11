@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.css'
-import { Route } from 'react-router-dom'
+import { NavLink, Route } from 'react-router-dom'
 // import Aux from '../src/HOC/Aux/Aux'
 
 import Companies from '../src/Companies/Companies'
@@ -12,7 +12,7 @@ import Logs from '../src/Logs/Logs'
 import Steps from '../src/Steps/Steps'
 import Tasks from '../src/Tasks/Tasks'
 import Users from '../src/Users/Users'
-import MainNav from '../src/UI/MainNav'
+import MainNav from '../src/UI/MainNav/MainNav'
 
 import { Container } from 'reactstrap';
 
@@ -31,49 +31,43 @@ class App extends Component {
 					</div>
 
 					<div className='col'>
-						<h5 className='DataBackGround'>Companies</h5>
-						{/* <Companies /> */}
+						<NavLink to="/companies/">Companies</NavLink>
 						<Route path="/companies" component={Companies} />
 					</div>
+					<br />
 
 					<div className='col'>
-						<h5 className='DataBackGround'>Contacts</h5>
-						{/* <Contacts /> */}
+						<NavLink to="/contacts/">Contacts</NavLink>
 						<Route path="/contacts" component={Contacts} />
 					</div>
 					<br />
 
 					<div className='col'>
-						<h5 className='DataBackGround'>Jobs</h5>
-						{/* <Jobs /> */}
+						<NavLink to="/jobs/">Jobs</NavLink>
 						<Route path="/jobs" component={Jobs} />
 					</div>
 					<br />
 
 					<div className='col'>
-						<h5 className='DataBackGround'>Users</h5>
-						{/* <Users /> */}
+						<NavLink to="/users/">Users</NavLink>
 						<Route path="/users" component={Users} />
 					</div>
 					<br />
 
 					<div className='col'>
-						<h5 className='DataBackGround'>Steps</h5>
-						{/* <Steps /> */}
+						<NavLink to="/steps/">Steps</NavLink>
 						<Route path="/steps" component={Steps} />
 					</div>
 					<br />
 
 					<div className='col'>
-						<h5 className='DataBackGround'>Tasks</h5>
-						{/* <Tasks /> */}
+						<NavLink to="/tasks/">Tasks</NavLink>
 						<Route path="/tasks" component={Tasks} />
 					</div>
 					<br />
 
 					<div className='col'>
-						<h5 className='DataBackGround'>Logs</h5>
-						{/* <Logs /> */}
+						<NavLink to="/logs/">Logs</NavLink>
 						<Route path="/logs" component={Logs} />
 					</div>
 					<br />
