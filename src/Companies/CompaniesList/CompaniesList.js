@@ -22,7 +22,7 @@ const CompaniesList = (props) => {
 				</td>
 				<td><button
 					type='button'
-					className="Show"
+					className="Success"
 					onClick={() => props.show(company.id)}>show
         </button></td>
 				<td><button

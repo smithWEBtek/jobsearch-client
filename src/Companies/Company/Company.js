@@ -1,16 +1,19 @@
 import React from 'react'
-import { Card } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
 
 const Company = (props) => {
 
 	return (
-		<div>
-			<Card
-				key={props.company.id}
-				className='Card'>
-				name of company here
-				</Card>
-		</div >
+		<div key={props.company.id}>
+			<Card>
+				<CardBody>
+					<CardTitle>	{props.company.name}</CardTitle>
+					<CardSubtitle>{props.company.city}, {props.company.state}</CardSubtitle>
+					<CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+					<Button>Button</Button>
+				</CardBody>
+			</Card>
+		</div>
 	);
 };
 

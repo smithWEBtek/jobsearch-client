@@ -23,6 +23,7 @@ class Companies extends Component {
 
 	componentDidMount() {
 		this.props.onFetchCompanies()
+		this.props.onFetchContacts()
 	}
 
 	//********CREATE_COMPANY form handling ***************
@@ -81,7 +82,7 @@ class Companies extends Component {
 	}
 
 	render() {
-		const { match, companies } = this.props
+		const { match, companies, contacts } = this.props
 		const renderedCompanies = <Spinner />
 		return (
 			<Container>
@@ -94,6 +95,17 @@ class Companies extends Component {
 					</Switch>
 				</div>
 				<hr />
+
+				{/*********CREATE COMPANY MODAL********************/}
+				<button onClick={this.createCompanyForm}>Add Company</button>
+				<Modal
+					show={this.state.createCompany}
+					modalClosed={this.createCompanyFormCancel}>
+					<CreateCompany
+						createCompany={(newCompanyData) => this.createCompany(newCompanyData)}
+						createCompanyCancel={this.createCompanyFormCancel} />
+				</Modal>
+
 				{/**********COMPANIES LIST************************/}
 				{this.props.companies ?
 					<div>
@@ -104,15 +116,7 @@ class Companies extends Component {
 							show={(id) => this.showCompany(id)}
 						/>
 					</div > : renderedCompanies}
-				{/*********CREATE COMPANY MODAL********************/}
-				<button onClick={this.createCompanyForm}>Add Company</button>
-				<Modal
-					show={this.state.createCompany}
-					modalClosed={this.createCompanyFormCancel}>
-					<CreateCompany
-						createCompany={(newCompanyData) => this.createCompany(newCompanyData)}
-						createCompanyCancel={this.createCompanyFormCancel} />
-				</Modal>
+
 				{/*********EDIT COMPANY MODAL********************/}
 				<Modal
 					show={this.state.editCompany}
@@ -120,11 +124,13 @@ class Companies extends Component {
 					{this.state.company ?
 						<EditCompany
 							company={this.state.company}
+							contacts={contacts}
 							edit={(id) => this.showEditCompanyForm(id)}
 							// update={(data, history) => this.props.onUpdateCompany(data, history)}
 							close={() => this.closeEditCompanyForm()}
 						/> : null}
 				</Modal>
+
 				{/*********SHOW COMPANY MODAL********************/}
 				<Modal
 					show={this.state.showCompany}
@@ -133,7 +139,6 @@ class Companies extends Component {
 						<Company
 							company={this.state.company}
 							edit={(id) => this.showCompany(id)}
-							// update={(data, history) => this.props.onUpdateCompany(data, history)}
 							close={() => this.closeCompany()}
 						/> : null}
 				</Modal>
@@ -144,7 +149,8 @@ class Companies extends Component {
 
 const mapStateToProps = state => {
 	return {
-		companies: state.com.companies
+		companies: state.com.companies,
+		contacts: state.con.contacts
 	}
 }
 
@@ -153,7 +159,8 @@ const mapDispatchToProps = dispatch => {
 		onFetchCompanies: () => dispatch(actions.fetchCompanies()),
 		onDeleteCompany: (id, history) => dispatch(actions.deleteCompany(id, history)),
 		onCreateCompany: (data) => dispatch(actions.createCompany(data)),
-		onUpdateCompany: (data, history) => dispatch(actions.updateCompany(data, history))
+		onUpdateCompany: (data, history) => dispatch(actions.updateCompany(data, history)),
+		onFetchContacts: () => dispatch(actions.fetchContacts())
 	}
 }
 
