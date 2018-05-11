@@ -1,6 +1,7 @@
 import React from 'react'
 import CompanyRow from '../CompanyRow/CompanyRow'
 import { Table } from 'reactstrap'
+
 import './CompaniesList.css'
 
 const CompaniesList = (props) => {
@@ -24,7 +25,8 @@ const CompaniesList = (props) => {
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th className="col-md-3">Name</th>
+						<th className="col-md-3">Name
+						</th>
 						<th>City</th>
 						<th>State</th>
 						<th>URL</th>
@@ -37,7 +39,7 @@ const CompaniesList = (props) => {
 					{renderCompanies}
 				</tbody>
 			</Table>
-		</div>
+		</div >
 	)
 }
 

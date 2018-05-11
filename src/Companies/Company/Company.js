@@ -1,17 +1,17 @@
 import React from 'react';
 import { Card } from 'reactstrap';
-
+import { withRouter } from 'react-router-dom'
 const Company = (props) => {
-
+	console.log('props: ', props);
 	return (
 		<div>
 			<Card
-				key={props.match.params["id"]}
+				key={props}
 				className='Card'>
-				{props.company.name}
+				<h1>company data from Card component here....</h1>
 			</Card>
 		</div>
 	);
 };
 
-export default Company;
+export default withRouter(Company);

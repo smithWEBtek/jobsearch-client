@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import * as actions from '../Store/Actions/Index'
 import { Route, Switch, withRouter } from 'react-router-dom'
-
-import { Container } from 'reactstrap'
-import Modal from '../UI/Modal/Modal'
-import CompaniesList from './CompaniesList/CompaniesList'
 import { connect } from 'react-redux'
+
+import CompaniesList from './CompaniesList/CompaniesList'
 import CreateCompany from './CreateCompany/CreateCompany'
 import EditCompany from './EditCompany/EditCompany'
 import Company from './Company/Company'
+
+import { Container } from 'reactstrap'
+import Modal from '../UI/Modal/Modal'
 import Spinner from '../UI/Spinner/Spinner'
 
 class Companies extends Component {
@@ -63,11 +64,7 @@ class Companies extends Component {
 
 	render() {
 		const { match, companies } = this.props
-
 		const renderedCompanies = <Spinner />
-
-
-
 		return (
 			<Container>
 				<hr />
