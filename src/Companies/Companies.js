@@ -17,6 +17,7 @@ class Companies extends Component {
 		company: null,
 		createCompany: false,
 		editCompany: false,
+		showCompany: false,
 		rerender: false
 	}
 
@@ -38,6 +39,23 @@ class Companies extends Component {
 	createCompanyFormCancel = () => {
 		this.setState({ createCompany: false })
 	}
+
+	//********SHOW_COMPANY form handling ****************
+	showCompany = (id) => {
+		let company = this.props.companies.find(company => company.id === id)
+		this.setState({
+			company: company,
+			showCompany: true
+		})
+	}
+
+	closeCompany = () => {
+		this.setState({
+			showCompany: false,
+			company: null
+		})
+	}
+
 
 	//********EDIT_COMPANY form handling ****************
 	showEditCompanyForm = (id) => {
@@ -67,7 +85,6 @@ class Companies extends Component {
 		const renderedCompanies = <Spinner />
 		return (
 			<Container>
-
 				<div>
 					<Switch>
 						<Route path={`${match.url}/:id/edit`} exact component={EditCompany} />
@@ -76,19 +93,17 @@ class Companies extends Component {
 						<Route path={match.url} exact />
 					</Switch>
 				</div>
-
 				<hr />
 				{/**********COMPANIES LIST************************/}
-
 				{this.props.companies ?
 					<div>
 						<CompaniesList
 							companies={companies}
 							deleteCompany={this.deleteCompany}
 							edit={(id) => this.showEditCompanyForm(id)}
+							show={(id) => this.showCompany(id)}
 						/>
 					</div > : renderedCompanies}
-
 				{/*********CREATE COMPANY MODAL********************/}
 				<button onClick={this.createCompanyForm}>Add Company</button>
 				<Modal
@@ -98,7 +113,6 @@ class Companies extends Component {
 						createCompany={(newCompanyData) => this.createCompany(newCompanyData)}
 						createCompanyCancel={this.createCompanyFormCancel} />
 				</Modal>
-
 				{/*********EDIT COMPANY MODAL********************/}
 				<Modal
 					show={this.state.editCompany}
@@ -111,7 +125,18 @@ class Companies extends Component {
 							close={() => this.closeEditCompanyForm()}
 						/> : null}
 				</Modal>
-
+				{/*********SHOW COMPANY MODAL********************/}
+				<Modal
+					show={this.state.showCompany}
+					modalClosed={this.closeCompany}>
+					{this.state.showCompany ?
+						<Company
+							company={this.state.company}
+							edit={(id) => this.showCompany(id)}
+							// update={(data, history) => this.props.onUpdateCompany(data, history)}
+							close={() => this.closeCompany()}
+						/> : null}
+				</Modal>
 			</Container>
 		)
 	}

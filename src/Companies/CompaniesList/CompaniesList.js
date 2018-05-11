@@ -1,21 +1,39 @@
 import React from 'react'
-import CompanyRow from '../CompanyRow/CompanyRow'
 import { Table } from 'reactstrap'
-
+import { Link } from 'react-router-dom'
 import './CompaniesList.css'
 
 const CompaniesList = (props) => {
-
 	let sortedCompanies = props.companies.sort((a, b) => a.name.toLowerCase() < b.name.toLowerCase() ? -1 : a.name.toLowerCase() > b.name.toLowerCase() ? 1 : 0)
-
 	let renderCompanies = sortedCompanies.map((company, index) => {
 		return (
-			<CompanyRow
-				key={index}
-				company={company}
-				edit={props.edit}
-				deleteCompany={props.deleteCompany}
-			/>
+			<tr key={index}>
+				<th>{company.id}</th>
+				<td>{company.name}</td>
+				<td>{company.city}</td>
+				<td>{company.state}</td>
+				<td>jobs</td>
+				<td>tasks</td>
+				<td>contacts</td>
+				<td>
+					<Link
+						to={company.url}
+						target='blank'>site</Link>
+				</td>
+				<td><button
+					type='button'
+					className="Show"
+					onClick={() => props.show(company.id)}>show
+        </button></td>
+				<td><button
+					type='button'
+					className="Edit"
+					onClick={() => props.edit(company.id)}>edit
+        </button></td>
+				<td><button
+					onClick={() => props.deleteCompany(company.id)}
+					className="Danger">x</button></td>
+			</tr>
 		)
 	})
 
@@ -24,15 +42,18 @@ const CompaniesList = (props) => {
 			<Table striped className="List">
 				<thead>
 					<tr>
-						<th>ID</th>
-						<th className="col-md-3">Name
+						<th>id</th>
+						<th className="col-sm-1">name
 						</th>
-						<th>City</th>
-						<th>State</th>
-						<th>URL</th>
-						<th>Show</th>
-						<th>Edit</th>
-						<th>X</th>
+						<th>city</th>
+						<th>state</th>
+						<th>jobs</th>
+						<th>tasks</th>
+						<th>contacts</th>
+						<th>site</th>
+						<th>show</th>
+						<th>edit</th>
+						<th>x</th>
 					</tr>
 				</thead>
 				<tbody>
