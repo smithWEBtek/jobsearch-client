@@ -12,6 +12,7 @@ class EditContact extends Component {
 		lname: '',
 		email: '',
 		title: '',
+		phone: '',
 		twitter: '',
 		linkedin: '',
 		url: '',
@@ -27,6 +28,7 @@ class EditContact extends Component {
 			fname: this.props.contact.fname,
 			lname: this.props.contact.lname,
 			email: this.props.contact.email,
+			phone: this.props.contact.phone,
 			title: this.props.contact.title,
 			twitter: this.props.contact.twitter,
 			linkedin: this.props.contact.linkedin,
@@ -50,7 +52,7 @@ class EditContact extends Component {
 	// 	})
 	// }
 
-	handleChange = (e) => {
+	handleOnChange = (e) => {
 		e.preventDefault()
 		const { name, value } = e.target;
 		this.setState({ [name]: value });
@@ -61,9 +63,12 @@ class EditContact extends Component {
 	}
 
 	handleSubmit = (e) => {
-		let history = this.props.history
+		// let history = this.props.history
+		let history = '/contacts'
+
 		let data = this.state
 		this.props.onUpdateContact(data, history)
+		this.props.close()
 	}
 
 	render() {
@@ -84,7 +89,7 @@ class EditContact extends Component {
 									name="fname"
 									value={this.state.fname}
 									onChange={(event) => this.handleOnChange(event)}
-									placeholder="first name"
+									// placeholder="first name"
 									required />
 							</p>
 							<p>last name
@@ -93,7 +98,7 @@ class EditContact extends Component {
 									name="lname"
 									value={this.state.lname}
 									onChange={(event) => this.handleOnChange(event)}
-									placeholder="last name"
+									// placeholder="last name"
 									required />
 							</p>
 							<p>email
@@ -102,7 +107,7 @@ class EditContact extends Component {
 									name="email"
 									value={this.state.email}
 									onChange={(event) => this.handleOnChange(event)}
-									placeholder="email"
+									// placeholder="email"
 									required />
 							</p>
 							<p>phone
@@ -111,7 +116,7 @@ class EditContact extends Component {
 									name="phone"
 									value={this.state.phone}
 									onChange={(event) => this.handleOnChange(event)}
-									placeholder="phone"
+									// placeholder="phone"
 									required />
 							</p>
 							<p>title
@@ -120,7 +125,7 @@ class EditContact extends Component {
 									name="title"
 									value={this.state.title}
 									onChange={(event) => this.handleOnChange(event)}
-									placeholder="title"
+									// placeholder="title"
 									required />
 							</p>
 							<p>url
@@ -129,7 +134,7 @@ class EditContact extends Component {
 									name="url"
 									value={this.state.url}
 									onChange={(event) => this.handleOnChange(event)}
-									placeholder="url"
+									// placeholder="url"
 									required />
 							</p>
 							<p>linkedin
@@ -138,7 +143,7 @@ class EditContact extends Component {
 									name="linkedin"
 									value={this.state.linkedin}
 									onChange={(event) => this.handleOnChange(event)}
-									placeholder="linkedin"
+									// placeholder="linkedin"
 									required />
 							</p>
 							<p>twitter
@@ -147,7 +152,7 @@ class EditContact extends Component {
 									name="twitter"
 									value={this.state.twitter}
 									onChange={(event) => this.handleOnChange(event)}
-									placeholder="twitter"
+									// placeholder="twitter"
 									required />
 							</p>
 
@@ -168,8 +173,7 @@ class EditContact extends Component {
 					<Col xs="4">
 						<hr />
 						<select
-							// value={this.state.company.name}
-							value={this.state.company_id}
+							value={this.state.company.name}
 							onChange={(event) => this.handleCompanySelect(event)}>
 							{companySelectOptions}
 						</select>
