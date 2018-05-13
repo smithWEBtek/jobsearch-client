@@ -7,7 +7,9 @@ const Contact = (props) => {
 			<Card
 				key={props.contact.id}
 				className='Card'>
-				{props.contact.fname} {props.contact.lname}
+				<p><strong>{props.contact.fname} {props.contact.lname}</strong></p>
+				<p>{props.contact.email}</p>
+				<p>{props.contact.company.name}</p>
 			</Card>
 		</div>
 	);

@@ -1,13 +1,13 @@
 .Modal {
   position: fixed;
   z-index: 500;
-  background-color: rgb(225, 236, 232);
-  width: 60%;
+  background-color: rgb(222, 238, 232);
+  width: 80%;
   border: 1px solid rgb(127, 126, 165);
   box-shadow: 1px 1px 1px black;
   padding: 16px;
   left: 15%;
-  top: 30%;
+  top: 5%;
   box-sizing: border-box;
   transition: all 0.3s ease-out;
 }

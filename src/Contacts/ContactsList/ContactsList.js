@@ -10,14 +10,13 @@ const ContactsList = (props) => {
 	let renderContacts = props.contacts.map((contact, index) => {
 		return (
 			<tr key={index}>
-				{/* <td>{contact.company.name}</td> */}
-				<td>company_name</td>
+				<td>{contact.company.name}</td>
 				<td>{contact.fname} {contact.lname}</td>
 				<td>{contact.title}</td>
 				<td><Link to={contact.email}>email</Link></td>
-				{/* <td>{contact.linkedin}</td> */}
-				{/* <td>{contact.twitter}</td> */}
 				<td><Link to={contact.phone}>ph</Link></td>
+				<td>{contact.linkedin}</td>
+				<td>{contact.twitter}</td>
 				<td><Link to={contact.url}>site</Link></td>
 				<td>jobs[]</td>
 				<td>tasks[]</td>
@@ -52,9 +51,9 @@ const ContactsList = (props) => {
 								<th>name</th>
 								<th>title</th>
 								<th>email</th>
-								{/* <th>linkedin</th> */}
-								{/* <th>twitter</th> */}
 								<th>phone</th>
+								<th>linkedin</th>
+								<th>twitter</th>
 								<th>url</th>
 								<th>jobs</th>
 								<th>tasks</th>
