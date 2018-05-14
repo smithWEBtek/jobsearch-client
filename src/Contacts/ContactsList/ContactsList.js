@@ -4,41 +4,41 @@ import { Link } from 'react-router-dom'
 import './ContactsList.css'
 
 const ContactsList = (props) => {
-	// let sortedContacts = props.companies.sort((a, b) => a.lname.toLowerCase() < b.lname.toLowerCase() ? -1 : a.lname.toLowerCase() > b.lname.toLowerCase() ? 1 : 0)
-	// let renderContacts = sortedContacts.map((contact, index) => {
+	let renderContacts = <div><p>No assigned contacts</p></div>
+	if (props.contacts) {
+		renderContacts = props.contacts.map((contact, index) => {
+			return (
+				<tr key={index}>
+					<td>{contact.company.name}</td>
+					<td>{contact.fname} {contact.lname}</td>
+					<td>{contact.title}</td>
+					<td><Link to={contact.email}>email</Link></td>
+					<td><Link to={contact.phone}>ph</Link></td>
+					<td>{contact.linkedin}</td>
+					<td>{contact.twitter}</td>
+					<td><Link to={contact.url}>site</Link></td>
+					<td>jobs[]</td>
+					<td>tasks[]</td>
 
-	let renderContacts = props.contacts.map((contact, index) => {
-		return (
-			<tr key={index}>
-				<td>{contact.company.name}</td>
-				<td>{contact.fname} {contact.lname}</td>
-				<td>{contact.title}</td>
-				<td><Link to={contact.email}>email</Link></td>
-				<td><Link to={contact.phone}>ph</Link></td>
-				<td>{contact.linkedin}</td>
-				<td>{contact.twitter}</td>
-				<td><Link to={contact.url}>site</Link></td>
-				<td>jobs[]</td>
-				<td>tasks[]</td>
-
-				<td><button
-					type='button'
-					className="Success"
-					onClick={() => props.show(contact.id)}>show
+					<td><button
+						type='button'
+						className="Success"
+						onClick={() => props.show(contact.id)}>show
         </button></td>
 
-				<td><button
-					type='button'
-					className="Edit"
-					onClick={() => props.edit(contact.id)}>edit
+					<td><button
+						type='button'
+						className="Edit"
+						onClick={() => props.edit(contact.id)}>edit
         </button></td>
 
-				<td><button
-					onClick={() => props.deleteCompany(contact.id)}
-					className="Danger">x</button></td>
-			</tr>
-		)
-	})
+					<td><button
+						onClick={() => props.deleteCompany(contact.id)}
+						className="Danger">x</button></td>
+				</tr>
+			)
+		})
+	}
 
 	return (
 		<Container>

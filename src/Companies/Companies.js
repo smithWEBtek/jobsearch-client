@@ -82,7 +82,7 @@ class Companies extends Component {
 	}
 
 	render() {
-		const { match, companies, contacts } = this.props
+		const { match, companies } = this.props
 		const renderedCompanies = <Spinner />
 		return (
 			<Container>
@@ -124,7 +124,7 @@ class Companies extends Component {
 					{this.state.company ?
 						<EditCompany
 							company={this.state.company}
-							contacts={contacts}
+							contacts={this.state.company.contacts}
 							edit={(id) => this.showEditCompanyForm(id)}
 							// update={(data, history) => this.props.onUpdateCompany(data, history)}
 							close={() => this.closeEditCompanyForm()}
@@ -138,6 +138,7 @@ class Companies extends Component {
 					{this.state.showCompany ?
 						<Company
 							company={this.state.company}
+							contacts={this.state.company.contacts}
 							edit={(id) => this.showCompany(id)}
 							close={() => this.closeCompany()}
 						/> : null}

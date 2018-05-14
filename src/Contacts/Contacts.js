@@ -10,6 +10,7 @@ import Contact from './Contact/Contact'
 
 import { Container } from 'reactstrap'
 import Modal from '../UI/Modal/Modal'
+import ContactModal from '../UI/ContactModal/ContactModal'
 import Spinner from '../UI/Spinner/Spinner'
 
 class Contacts extends Component {
@@ -17,7 +18,6 @@ class Contacts extends Component {
 		contact: null,
 		createContact: false,
 		editContact: false,
-		showContact: false,
 		rerender: false
 	}
 
@@ -43,15 +43,15 @@ class Contacts extends Component {
 	//********SHOW_CONTACT form handling ****************
 	showContact = (id) => {
 		let contact = this.props.contacts.find(contact => contact.id === id)
+		this.props.onShowContact()
 		this.setState({
-			contact: contact,
-			showContact: true
+			contact: contact
 		})
 	}
 
 	closeContact = () => {
+		this.props.onCloseContact()
 		this.setState({
-			showContact: false,
 			contact: null
 		})
 	}
@@ -105,6 +105,18 @@ class Contacts extends Component {
 						createContactCancel={this.createContactFormCancel} />
 				</Modal>
 
+				{/*********SHOW CONTACT MODAL********************/}
+				<ContactModal
+					show={this.props.showContact}
+					modalClosed={this.closeContact}>
+					{this.props.showContact ?
+						<Contact
+							contact={this.state.contact}
+							edit={(id) => this.showContact(id)}
+							close={() => this.closeContact()}
+						/> : null}
+				</ContactModal>
+
 				{/**********CONTACTS LIST************************/}
 				{this.props.contacts ?
 					<div>
@@ -129,18 +141,6 @@ class Contacts extends Component {
 							close={() => this.closeEditContactForm()}
 						/> : null}
 				</Modal>
-
-				{/*********SHOW CONTACT MODAL********************/}
-				<Modal
-					show={this.state.showContact}
-					modalClosed={this.closeContact}>
-					{this.state.showContact ?
-						<Contact
-							contact={this.state.contact}
-							edit={(id) => this.showContact(id)}
-							close={() => this.closeContact()}
-						/> : null}
-				</Modal>
 			</Container>
 		)
 	}
@@ -148,6 +148,8 @@ class Contacts extends Component {
 
 const mapStateToProps = state => {
 	return {
+		showContact: state.con.showContact,
+		closeContact: state.con.closeContact,
 		companies: state.com.companies,
 		contacts: state.con.contacts
 	}
@@ -155,6 +157,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
+		onShowContact: () => dispatch(actions.showContact()),
+		onCloseContact: () => dispatch(actions.closeContact()),
 		onFetchContacts: () => dispatch(actions.fetchContacts()),
 		onDeleteContact: (id, history) => dispatch(actions.deleteContact(id, history)),
 		onCreateContact: (data) => dispatch(actions.createContact(data)),

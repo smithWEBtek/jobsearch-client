@@ -10,7 +10,9 @@ export {
 	createContact,
 	deleteContact,
 	updateContact,
-	fetchContacts
+	fetchContacts,
+	showContact,
+	closeContact
 } from './ContactActions'
 
 export {

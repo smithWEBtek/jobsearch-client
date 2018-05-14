@@ -1,16 +1,16 @@
 import React from 'react'
-import './Modal.css'
-import Backdrop from '../Backdrop/Backdrop'
+import './ContactModal.css'
+import ContactBackdrop from './ContactBackdrop'
 import { Container, Card, CardBody } from 'reactstrap'
 
-const Modal = (props) => {
+const ContactModal = (props) => {
 
 	return (
 		<Container>
-			<Backdrop show={props.show} clicked={props.modalClosed} />
+			<ContactBackdrop show={props.show} clicked={props.modalClosed} />
 			<Card>
 				<CardBody
-					className="Modal"
+					className="ContactModal"
 					style={{
 						transform: props.show
 							? 'translateY(0)'
@@ -27,4 +27,4 @@ const Modal = (props) => {
 	)
 }
 
-export default Modal
+export default ContactModal

@@ -18,7 +18,8 @@ class EditContact extends Component {
 		url: '',
 		company: {},
 		company_id: '',
-		companies: []
+		companies: [],
+		contact: {}
 	}
 
 	componentDidMount() {
@@ -37,20 +38,12 @@ class EditContact extends Component {
 		})
 	}
 
-
 	handleCompanySelect = (event) => {
 		this.setState({
 			company: this.props.companies.find(company => company.name === event.target.value),
 			company_id: this.props.companies.find(company => company.name === event.target.value).id
 		})
 	}
-
-
-	// handleJobSelect = (event) => {
-	// 	this.setState({
-	// 		job: this.props.jobs.find(job => job.title === event.target.value)
-	// 	})
-	// }
 
 	handleOnChange = (e) => {
 		e.preventDefault()
@@ -65,10 +58,9 @@ class EditContact extends Component {
 	handleSubmit = (e) => {
 		// let history = this.props.history
 		let history = '/contacts'
-
 		let data = this.state
-		this.props.onUpdateContact(data, history)
 		this.props.close()
+		this.props.onUpdateContact(data, history)
 	}
 
 	render() {

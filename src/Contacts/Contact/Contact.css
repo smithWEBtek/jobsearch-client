@@ -1,0 +1,10 @@
+
+.Card {
+  float: left;
+  text-align: left;
+  padding: 15px;
+  width: 60%;
+  height: 100%;
+  color: rgb(75, 67, 67);
+	font-family: 'Open Sans', sans-serif;
+}

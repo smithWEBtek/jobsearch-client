@@ -3,8 +3,8 @@ import './EditCompany.css';
 import { connect } from 'react-redux'
 import * as actions from '../../Store/Actions/Index'
 import { withRouter } from 'react-router-dom'
-import ContactSelect from '../../Contacts/ContactSelect/ContactSelect'
 import { Container, Row, Col } from 'reactstrap'
+// import Aux from '../../HOC/Aux/Aux'
 
 class EditCompany extends Component {
 
@@ -15,14 +15,11 @@ class EditCompany extends Component {
 		state: '',
 		url: '',
 		about: '',
+		company: {},
 		contacts: []
 	}
 
-
-	componentDidMount() {
-
-		console.log('this.props: ', this.props);
-
+	componentWillMount() {
 		this.setState({
 			id: this.props.company.id,
 			name: this.props.company.name,
@@ -30,22 +27,10 @@ class EditCompany extends Component {
 			state: this.props.company.state,
 			url: this.props.company.url,
 			about: this.props.company.about,
-			contacts: this.props.company.contacts
+			company: this.props.company,
+			contacts: this.props.contacts
 		})
 	}
-
-
-	// handleContactSelect = (event) => {
-	// 	this.setState({
-	// 		contact: this.props.contacts.find(contact => contact.lname === event.target.value)
-	// 	})
-	// }
-
-	// handleJobSelect = (event) => {
-	// 	this.setState({
-	// 		job: this.props.jobs.find(job => job.title === event.target.value)
-	// 	})
-	// }
 
 	handleChange = (e) => {
 		e.preventDefault()
@@ -64,7 +49,16 @@ class EditCompany extends Component {
 	}
 
 	render() {
-
+		let companyContacts = <p>No contacts assigned</p>
+		if (this.state.company.contacts.length > 0) {
+			companyContacts = this.state.company.contacts.map((contact, index) => {
+				return (
+					<div key={index}>
+						<p>{contact.fname} {contact.lname}</p>
+					</div>
+				)
+			})
+		}
 
 		return (
 			<Container>
@@ -126,9 +120,10 @@ class EditCompany extends Component {
 							>UPDATE</button></p>
 						</form>
 					</Col>
-					<Col xs="4">
-						<ContactSelect
-							contacts={this.props.contacts} />
+					<Col>
+						<div><strong>Assigned contacts:
+						{companyContacts}
+						</strong></div>
 					</Col>
 				</Row>
 			</Container>
@@ -145,6 +140,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
+		onShowContact: () => dispatch(actions.showContact()),
+		onCloseContact: () => dispatch(actions.closeContact()),
 		onUpdateCompany: (data, history) => dispatch(actions.updateCompany(data, history))
 	}
 }

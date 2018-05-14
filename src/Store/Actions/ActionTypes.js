@@ -20,6 +20,9 @@ export const UPDATE_COMPANY_SUCCESS = 'UPDATE_COMPANY_SUCCESS'
 export const UPDATE_COMPANY_FAIL = 'UPDATE_COMPANY_FAIL'
 
 // CONTACTS------------------------------------------------------
+export const SHOW_CONTACT = 'SHOW_CONTACT'
+export const CLOSE_CONTACT = 'CLOSE_CONTACT'
+
 export const FETCH_CONTACTS = 'FETCH_CONTACTS'
 export const FETCH_CONTACTS_START = 'FETCH_CONTACTS_START'
 export const FETCH_CONTACTS_SUCCESS = 'FETCH_CONTACTS_SUCCESS'

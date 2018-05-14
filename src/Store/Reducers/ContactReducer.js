@@ -3,6 +3,7 @@ import * as actionTypes from '../Actions/ActionTypes';
 const initialState = {
 	contacts: [],
 	loading: false,
+	showContact: false,
 	error: false,
 	message: ''
 };
@@ -99,6 +100,18 @@ const reducer = (state = initialState, action) => {
 			const updatedContacts = state.contacts.filter(contact => contact.id !== action.id);
 			return Object.assign({}, state, {
 				contacts: updatedContacts
+			})
+
+		//----- SHOW_CONTACT -----------------------------
+		case actionTypes.SHOW_CONTACT:
+			return Object.assign({}, state, {
+				showContact: true
+			})
+
+		//----- CLOSE_CONTACT -----------------------------
+		case actionTypes.CLOSE_CONTACT:
+			return Object.assign({}, state, {
+				showContact: false
 			})
 
 		//----- DEFAULT --------------------------------
