@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 // import { Route } from 'react-router-dom'
+import * as actions from '../../Store/Actions/Index'
+
 import {
+	Button,
 	Navbar,
 	Nav,
 	NavItem,
@@ -34,6 +37,9 @@ class MainNav extends Component {
 						</NavItem>
 						<NavItem>
 							<NavLink href="/logs/">Logs</NavLink>
+						</NavItem>
+						<NavItem>
+							<Button onClick={actions.backupData()}>BackupData</Button>
 						</NavItem>
 					</Nav>
 				</Navbar>

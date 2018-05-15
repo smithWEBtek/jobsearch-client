@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import * as actions from '../Store/Actions/Index'
 
 import { connect } from 'react-redux';
-import Job from './Job'
-// import JobViewer from '../Jobs/JobViewer'
+import Job from './Job/Job'
 
 class Jobs extends Component {
 	state = {

@@ -1,18 +1,21 @@
 import React from 'react'
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
-import ContactsList from '../../Contacts/ContactsList/ContactsList'
-
-
+import { Card, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap';
+import { Link } from 'react-router-dom'
 
 const Company = (props) => {
-
+	const MAX_LENGTH = 1500;
 	return (
 		<div key={props.company.id}>
 			<Card>
 				<CardBody>
 					<CardTitle>	{props.company.name}</CardTitle>
 					<CardSubtitle>{props.company.city}, {props.company.state}</CardSubtitle>
-					<CardText>{props.company.about}</CardText>
+					<div>
+						<Link to={props.company.url}>{props.company.url}</Link>
+						<CardText>
+							{props.company.about.substring(0, MAX_LENGTH)}
+						</CardText>
+					</div>
 
 
 				</CardBody>

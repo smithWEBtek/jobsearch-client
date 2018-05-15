@@ -49,3 +49,7 @@ export {
 	updateUser,
 	fetchUsers
 } from './UserActions'
+
+export {
+	backupData
+} from './StoreActions'

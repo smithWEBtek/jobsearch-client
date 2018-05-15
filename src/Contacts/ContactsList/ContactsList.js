@@ -17,20 +17,16 @@ const ContactsList = (props) => {
 					<td>{contact.linkedin}</td>
 					<td>{contact.twitter}</td>
 					<td><Link to={contact.url}>site</Link></td>
-					<td>jobs[]</td>
-					<td>tasks[]</td>
 
 					<td><button
 						type='button'
 						className="Success"
-						onClick={() => props.show(contact.id)}>show
-        </button></td>
+						onClick={() => props.show(contact.id)}>show</button></td>
 
 					<td><button
 						type='button'
 						className="Edit"
-						onClick={() => props.edit(contact.id)}>edit
-        </button></td>
+						onClick={() => props.edit(contact.id)}>edit</button></td>
 
 					<td><button
 						onClick={() => props.deleteCompany(contact.id)}
@@ -55,11 +51,9 @@ const ContactsList = (props) => {
 								<th>linkedin</th>
 								<th>twitter</th>
 								<th>url</th>
-								<th>jobs</th>
-								<th>tasks</th>
 								<th>show</th>
 								<th>edit</th>
-								<th>x</th>
+								<th>X</th>
 							</tr>
 						</thead>
 						<tbody>

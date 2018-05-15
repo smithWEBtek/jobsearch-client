@@ -1,3 +1,7 @@
+// STORE ------------------------------------------------------
+export const BACKUP_DATA = 'BACKUP_DATA'
+
+
 // COMPANIES------------------------------------------------------
 export const FETCH_COMPANIES = 'FETCH_COMPANIES'
 export const FETCH_COMPANIES_START = 'FETCH_COMPANIES_START'
