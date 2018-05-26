@@ -15,10 +15,26 @@ const Contact = (props) => {
 				<p><strong>{contact.fname} {contact.lname}</strong></p>
 				<p>{contact.email}</p>
 				<p>{contact.company.name}</p>
-				<Link to={`${props.location.pathname}/edit`}><button
+				<Link to={contact.linkedin}>linkedIn</Link>
+				<Link to={contact.twitter}>Twitter</Link>
+				<Link to={contact.url}>url</Link>
+
+				<button><Link to={`${props.location.pathname}/edit`}
 					type='button'
-					className="Edit">edit contact
-        </button></Link>
+					className="Edit">
+					edit contact</Link></button>
+
+				<p><button
+					type='button'
+					className="Edit"
+					onClick={() => props.edit(contact.id)}>edit contact
+        </button></p>
+
+
+				<td className='rowButton'><button
+					onClick={() => props.deleteContact(contact.id)}
+					className="Danger">x</button></td>
+
 			</Card>
 		</div>
 

@@ -7,9 +7,11 @@ const CompaniesList = (props) => {
 	let sortedCompanies = props.companies.sort((a, b) => a.name.toLowerCase() < b.name.toLowerCase() ? -1 : a.name.toLowerCase() > b.name.toLowerCase() ? 1 : 0)
 	let renderCompanies = sortedCompanies.map((company, index) => {
 		return (
-			<tr key={index}>
-				<th>{company.id}</th>
-				<td>{company.name}</td>
+			<tr key={index} className='tableRow'>
+				<td
+					className='companyHover'
+					onClick={() => props.show(company.id)}>{company.name}</td>
+
 				<td>{company.city}</td>
 				<td>{company.state}</td>
 				<td>jobs</td>
@@ -20,11 +22,6 @@ const CompaniesList = (props) => {
 						to={company.url}
 						target='blank'>site</Link>
 				</td>
-				<td><button
-					type='button'
-					className="Success"
-					onClick={() => props.show(company.id)}>show
-        </button></td>
 				<td><button
 					type='button'
 					className="Edit"
@@ -42,7 +39,6 @@ const CompaniesList = (props) => {
 			<Table striped className="List">
 				<thead>
 					<tr>
-						<th>id</th>
 						<th className="col-sm-1">name
 						</th>
 						<th>city</th>
@@ -51,7 +47,6 @@ const CompaniesList = (props) => {
 						<th>tasks</th>
 						<th>contacts</th>
 						<th>site</th>
-						<th>show</th>
 						<th>edit</th>
 						<th>x</th>
 					</tr>

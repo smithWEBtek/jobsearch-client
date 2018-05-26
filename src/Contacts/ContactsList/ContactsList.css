@@ -13,7 +13,34 @@
   color: rgb(75, 67, 67);
   font-family: 'Open Sans', sans-serif;
 }
- 
+
+th {
+	background-color: gray;
+	color: white;
+	font-size: 12pt;
+}
+
+tr {
+	line-height: 20px;
+}
+
+tr:nth-last-of-type(even)	 {
+	background-color: aliceblue;
+}
+
+tr:nth-last-of-type(odd)	 {
+	background-color: rgb(220, 224, 229);
+}
+
+.rowButton {
+	width: 20px;
+}
+
+.contactHover:hover {
+	font-style: italic;
+	font-weight: 900;
+}
+
 .Danger:hover {
   background-color: rgb(238, 84, 84);
 }
@@ -24,19 +51,6 @@
 
 .Success:hover {
   background-color: rgb(92, 243, 150);
-}
-
-.FormInstructions {
-  font-style: italic;
-  font-weight: 600;
-}
-
-th {
-    width: 3%;
-}
-
-td {
-    width: 10%;
 }
 
 .false {

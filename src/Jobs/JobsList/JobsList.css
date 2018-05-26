@@ -13,16 +13,7 @@
   color: rgb(75, 67, 67);
   font-family: 'Open Sans', sans-serif;
 }
-
-.companyHover:hover {
-	font-style: italic;
-	font-weight: 900;
-}
-
-.tableRow {
-	line-height: 10px;
-}
-
+ 
 .Danger:hover {
   background-color: rgb(238, 84, 84);
 }

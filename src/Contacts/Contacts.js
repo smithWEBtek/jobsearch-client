@@ -17,6 +17,7 @@ class Contacts extends Component {
 	state = {
 		contact: null,
 		createContact: false,
+		showContact: false,
 		editContact: false,
 		rerender: false
 	}
@@ -107,9 +108,9 @@ class Contacts extends Component {
 
 				{/*********SHOW CONTACT MODAL********************/}
 				<ContactModal
-					show={this.props.showContact}
+					show={this.state.showContact}
 					modalClosed={this.closeContact}>
-					{this.props.showContact ?
+					{this.state.showContact ?
 						<Contact
 							contact={this.state.contact}
 							edit={(id) => this.showContact(id)}

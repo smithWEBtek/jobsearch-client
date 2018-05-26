@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './CreateContact.css'
 import * as actions from '../../Store/Actions/Index'
 import { connect } from 'react-redux'
-import CompanySelect from '../../Companies/CompanySelect/CompanySelect'
+// import CompanySelect from '../../Companies/CompanySelect/CompanySelect'
 
 class CreateContact extends Component {
 	state = {
@@ -13,7 +13,12 @@ class CreateContact extends Component {
 		twitter: '',
 		linkedin: '',
 		url: '',
-		company_id: 1
+		company: ''
+	}
+
+
+	componentDidMount() {
+		this.props.onFetchCompanies()
 	}
 
 	handleOnChange = (event) => {
@@ -33,12 +38,22 @@ class CreateContact extends Component {
 			twitter: '',
 			linkedin: '',
 			url: '',
-			company_id: 1
+			company: {}
 		});
 		this.props.createContactCancel()
 	}
 
 	render() {
+
+		let companySelectOptions = (
+			<div>
+				<h3 htmlFor="selectCompany">select company</h3>
+				<select
+					value={this.state.company.name}
+					onChange={(event) => this.handleCompanySelect(event)}>
+				</select>
+			</div>
+		)
 
 		return (
 			<div>
@@ -117,9 +132,9 @@ class CreateContact extends Component {
 							required />
 					</p>
 					<hr />
-					<CompanySelect companies={this.props.companies} />
-					<hr />
-
+					<div>
+						{companySelectOptions}
+					</div>
 					<button
 						type="button"
 						onClick={this.props.createContactCancel}
@@ -128,7 +143,7 @@ class CreateContact extends Component {
 					<button className="Success"
 					>CREATE Contact</button>
 				</form>
-			</div>
+			</div >
 		)
 	}
 }
@@ -142,7 +157,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		onCreateContact: (data) => dispatch(actions.createContact(data))
+		onCreateContact: (data) => dispatch(actions.createContact(data)),
+		onFetchCompanies: () => dispatch(actions.fetchCompanies())
 	};
 }
 
