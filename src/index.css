@@ -83,3 +83,10 @@ tr:nth-last-of-type(odd)	 {
 .true {
   color: rgb(21, 199, 89);
 }
+
+.btn-secondary {
+	background-color: rgb(175, 175, 175);
+}
+a {
+	color: rgb(36, 71, 110);
+}

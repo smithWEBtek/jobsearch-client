@@ -30,40 +30,19 @@ class App extends Component {
 						<MainNav />
 					</div>
 
-					<div className='col'>
-						<NavLink to="/companies/">Companies</NavLink>
-						<Route path="/companies" component={Companies} />
-					</div>
+					<Route path="/companies" component={Companies} />
 
-					<div className='col'>
-						<NavLink to="/contacts/">Contacts</NavLink>
-						<Route path="/contacts" component={Contacts} />
-					</div>
+					<Route path="/contacts" component={Contacts} />
 
-					<div className='col'>
-						<NavLink to="/jobs/">Jobs</NavLink>
-						<Route path="/jobs" component={Jobs} />
-					</div>
+					<Route path="/jobs" component={Jobs} />
 
-					<div className='col'>
-						<NavLink to="/users/">Users</NavLink>
-						<Route path="/users" component={Users} />
-					</div>
+					<Route path="/users" component={Users} />
 
-					<div className='col'>
-						<NavLink to="/steps/">Steps</NavLink>
-						<Route path="/steps" component={Steps} />
-					</div>
+					<Route path="/steps" component={Steps} />
 
-					<div className='col'>
-						<NavLink to="/tasks/">Tasks</NavLink>
-						<Route path="/tasks" component={Tasks} />
-					</div>
+					<Route path="/tasks" component={Tasks} />
 
-					<div className='col'>
-						<NavLink to="/logs/">Logs</NavLink>
-						<Route path="/logs" component={Logs} />
-					</div>
+					<Route path="/logs" component={Logs} />
 
 				</Container>
 			</div>

@@ -1,48 +1,37 @@
 import React, { Component } from 'react';
 // import { Route } from 'react-router-dom'
 import * as actions from '../../Store/Actions/Index'
-
-import {
-	Button,
-	Navbar,
-	Nav,
-	NavItem,
-	NavLink
-} from 'reactstrap';
+import { Link } from 'react-router-dom'
+import { Button } from 'reactstrap';
+import './MainNav.css'
 
 class MainNav extends Component {
 
 	render() {
 		return (
 			<div>
-				<Navbar color="light" light expand="md">
-					<Nav className="ml-auto" navbar>
-						<NavItem>
-							<NavLink href="/companies/">Companies</NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="/contacts/">Contacts</NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="/jobs/">Jobs</NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="/users/">Users</NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="/steps/">Steps</NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="/tasks/">Tasks</NavLink>
-						</NavItem>
-						<NavItem>
-							<NavLink href="/logs/">Logs</NavLink>
-						</NavItem>
-						<NavItem>
-							<Button onClick={actions.backupData()}>BackupData</Button>
-						</NavItem>
-					</Nav>
-				</Navbar>
+				<Button>
+					<Link to="/companies/">Companies</Link>
+				</Button>
+				<Button>
+					<Link to="/contacts/">Contacts</Link>
+				</Button>
+				<Button>
+					<Link to="/jobs/">Jobs</Link>
+				</Button>
+				<Button>
+					<Link to="/users/">Users</Link>
+				</Button>
+				<Button>
+					<Link to="/steps/">Steps</Link>
+				</Button>
+				<Button>
+					<Link to="/tasks/">Tasks</Link>
+				</Button>
+				<Button>
+					<Link to="/logs/">Logs</Link>
+				</Button>
+				<Button onClick={actions.backupData()}>BackupData</Button>
 			</div>
 		);
 	}
