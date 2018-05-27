@@ -1,8 +1,7 @@
 .DataBackGround {
- 	background-color: rgb(210, 237, 252);
+ 	background-color: rgb(236, 241, 243);
 }
  
-
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

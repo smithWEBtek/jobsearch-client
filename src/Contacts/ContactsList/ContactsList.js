@@ -1,5 +1,4 @@
 import React from 'react'
-import './ContactsList.css'
 
 const ContactsList = (props) => {
 	let renderContacts = <div><p>No assigned contacts</p></div>
@@ -9,14 +8,17 @@ const ContactsList = (props) => {
 		renderContacts = sortedContacts.map((contact, index) => {
 			return (
 				<tr key={index} className='tableRow'>
-					<td>{contact.company.name}</td>
 					<td
 						onClick={() => props.show(contact.id)}
 						className='contactHover'>{contact.fname} {contact.lname}</td>
 
 					<td>{contact.title}</td>
+
 					<td><a href={`mailto:${contact.email}`}>{contact.email}</a></td>
-					<td>{contact.phone}</td>
+
+					<td>{contact.company.name}</td>
+
+					<td><a href={`tel:${contact.phone}`}>{contact.phone}</a></td>
 
 					<td className='rowButton'><button
 						type='button'
@@ -36,10 +38,10 @@ const ContactsList = (props) => {
 			<table className="List">
 				<thead>
 					<tr>
-						<th>company</th>
 						<th>name</th>
 						<th>title</th>
 						<th>email</th>
+						<th>company</th>
 						<th>phone</th>
 						<th>edit</th>
 						<th>X</th>

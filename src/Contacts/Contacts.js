@@ -10,7 +10,6 @@ import Contact from './Contact/Contact'
 
 import { Container } from 'reactstrap'
 import Modal from '../UI/Modal/Modal'
-import ContactModal from '../UI/ContactModal/ContactModal'
 import Spinner from '../UI/Spinner/Spinner'
 
 class Contacts extends Component {
@@ -93,7 +92,6 @@ class Contacts extends Component {
 						<Route path={match.url} exact />
 					</Switch>
 				</div>
-				<hr />
 
 				{/*********CREATE CONTACT MODAL********************/}
 				<button onClick={this.createContactForm}>Add Contact</button>

@@ -20,7 +20,7 @@ const CompaniesList = (props) => {
 				<td>
 					<Link
 						to={company.url}
-						target='blank'>site</Link>
+						target='blank'>{company.url}</Link>
 				</td>
 				<td><button
 					type='button'
@@ -36,7 +36,6 @@ const CompaniesList = (props) => {
 
 	return (
 		<div>
-			{/* <Table striped className="List"> */}
 			<table>
 				<thead>
 					<tr className='tableRow'>
@@ -55,7 +54,6 @@ const CompaniesList = (props) => {
 				<tbody>
 					{renderCompanies}
 				</tbody>
-				{/* </Table> */}
 			</table>
 		</div >
 	)

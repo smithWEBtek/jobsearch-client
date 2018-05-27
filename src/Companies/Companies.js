@@ -93,7 +93,6 @@ class Companies extends Component {
 						<Route path={match.url} exact />
 					</Switch>
 				</div>
-				<hr />
 
 				{/*********CREATE COMPANY MODAL********************/}
 				<button onClick={this.createCompanyForm}>Add Company</button>

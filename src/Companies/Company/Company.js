@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, CardBody, CardTitle, CardSubtitle, CardText } from 'reactstrap';
 import { Link } from 'react-router-dom'
+import './Company.css'
 
 const Company = (props) => {
 	const MAX_LENGTH = 1500;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Aux from '../../HOC/Aux/Aux'
+import './CompanySelect.css'
 
 class CompanySelect extends Component {
 

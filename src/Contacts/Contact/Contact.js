@@ -3,7 +3,6 @@ import { Card } from 'reactstrap';
 import { connect } from 'react-redux'
 import * as actions from '../../Store/Actions/Index'
 import { Link, withRouter } from 'react-router-dom'
-
 const Contact = (props) => {
 	let contact = props.contact ? props.contact : props.contacts.find(c => c.id === +props.match.params.id)
 
