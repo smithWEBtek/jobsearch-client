@@ -94,7 +94,6 @@ class Jobs extends Component {
 						<Route path={match.url} exact />
 					</Switch>
 				</div>
-				<hr />
 
 				{/*********CREATE JOB MODAL********************/}
 				<button onClick={this.createJobForm}>Add Job</button>

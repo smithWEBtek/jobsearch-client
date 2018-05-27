@@ -19,9 +19,9 @@ class MainNav extends Component {
 				<Button>
 					<Link to="/jobs/">Jobs</Link>
 				</Button>
-				<Button>
+				{/* <Button>
 					<Link to="/users/">Users</Link>
-				</Button>
+				</Button> */}
 				<Button>
 					<Link to="/steps/">Steps</Link>
 				</Button>

@@ -5,7 +5,6 @@ body {
 	font-weight: 200;
 }
 
-
 .Card {
   float: left;
   text-align: left;
@@ -87,6 +86,23 @@ tr:nth-last-of-type(odd)	 {
 .btn-secondary {
 	background-color: rgb(175, 175, 175);
 }
+
+table button.Edit{
+	background-color: rgba(248, 203, 3, 0.261);	
+	width: 40px;
+	border-radius: 25%;
+}
+
+table button.Delete{
+	background-color: #c9a5a5d5;	
+	width: 25px;
+	border-radius: 25%;
+}
+
+table button.Delete:hover {
+  background-color: rgb(238, 84, 84);
+}
+
 a {
 	color: rgb(36, 71, 110);
 }

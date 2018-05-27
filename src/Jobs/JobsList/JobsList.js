@@ -14,7 +14,7 @@ const JobsList = (props) => {
 					<td>{job.description}</td>
 					<td>{job.instructions}</td>
 					<td>{job.requirements}</td>
-					<td><Link to={job.url}>posting</Link></td>
+					<td><Link to={job.url}>post</Link></td>
 					<td><button
 						type='button'
 						className="Success"
@@ -27,7 +27,7 @@ const JobsList = (props) => {
 
 					<td><button
 						onClick={() => props.deleteCompany(job.id)}
-						className="Danger">x</button></td>
+						className="Delete">x</button></td>
 				</tr>
 			)
 		})
@@ -37,7 +37,7 @@ const JobsList = (props) => {
 		<Container>
 			<Row>
 				<Col xs="60px">
-					<Table striped className="List">
+					<table>
 						<thead>
 							<tr>
 								<th>company</th>
@@ -45,7 +45,7 @@ const JobsList = (props) => {
 								<th>description</th>
 								<th>instructions</th>
 								<th>requirements</th>
-								<th>posting</th>
+								<th>post</th>
 								<th>show</th>
 								<th>edit</th>
 								<th>X</th>
@@ -54,7 +54,7 @@ const JobsList = (props) => {
 						<tbody>
 							{renderJobs}
 						</tbody>
-					</Table>
+					</table>
 				</Col>
 			</Row>
 		</Container >

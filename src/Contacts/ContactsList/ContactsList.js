@@ -27,7 +27,7 @@ const ContactsList = (props) => {
 
 					<td className='rowButton'><button
 						onClick={() => props.deleteContact(contact.id)}
-						className="Danger">x</button></td>
+						className="Delete">x</button></td>
 				</tr >
 			)
 		})

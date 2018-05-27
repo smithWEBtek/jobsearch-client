@@ -29,7 +29,7 @@ const CompaniesList = (props) => {
         </button></td>
 				<td><button
 					onClick={() => props.deleteCompany(company.id)}
-					className="Danger">x</button></td>
+					className="Delete">x</button></td>
 			</tr>
 		)
 	})

@@ -56,7 +56,6 @@ class Companies extends Component {
 		})
 	}
 
-
 	//********EDIT_COMPANY form handling ****************
 	showEditCompanyForm = (id) => {
 		let company = this.props.companies.find(company => company.id === id)
