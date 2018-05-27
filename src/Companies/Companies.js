@@ -23,7 +23,6 @@ class Companies extends Component {
 
 	componentDidMount() {
 		this.props.onFetchCompanies()
-		this.props.onFetchContacts()
 	}
 
 	//********CREATE_COMPANY form handling ***************
@@ -98,6 +97,7 @@ class Companies extends Component {
 
 				{/*********CREATE COMPANY MODAL********************/}
 				<button onClick={this.createCompanyForm}>Add Company</button>
+
 				<Modal
 					show={this.state.createCompany}
 					modalClosed={this.createCompanyFormCancel}>
@@ -124,7 +124,6 @@ class Companies extends Component {
 					{this.state.company ?
 						<EditCompany
 							company={this.state.company}
-							contacts={this.state.company.contacts}
 							edit={(id) => this.showEditCompanyForm(id)}
 							// update={(data, history) => this.props.onUpdateCompany(data, history)}
 							close={() => this.closeEditCompanyForm()}
@@ -138,7 +137,6 @@ class Companies extends Component {
 					{this.state.showCompany ?
 						<Company
 							company={this.state.company}
-							contacts={this.state.company.contacts}
 							edit={(id) => this.showCompany(id)}
 							close={() => this.closeCompany()}
 						/> : null}
@@ -160,8 +158,7 @@ const mapDispatchToProps = dispatch => {
 		onFetchCompanies: () => dispatch(actions.fetchCompanies()),
 		onDeleteCompany: (id, history) => dispatch(actions.deleteCompany(id, history)),
 		onCreateCompany: (data) => dispatch(actions.createCompany(data)),
-		onUpdateCompany: (data, history) => dispatch(actions.updateCompany(data, history)),
-		onFetchContacts: () => dispatch(actions.fetchContacts())
+		onUpdateCompany: (data, history) => dispatch(actions.updateCompany(data, history))
 	}
 }
 

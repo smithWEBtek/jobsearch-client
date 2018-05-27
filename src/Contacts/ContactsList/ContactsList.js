@@ -1,21 +1,21 @@
 import React from 'react'
-// import { Container, Row, Col, Table } from 'reactstrap'
-import { Link } from 'react-router-dom'
 import './ContactsList.css'
 
 const ContactsList = (props) => {
 	let renderContacts = <div><p>No assigned contacts</p></div>
+	let sortedContacts = props.contacts.sort((a, b) => a.lname.toLowerCase() < b.lname.toLowerCase() ? -1 : a.lname.toLowerCase() > b.lname.toLowerCase() ? 1 : 0)
+
 	if (props.contacts) {
-		renderContacts = props.contacts.map((contact, index) => {
+		renderContacts = sortedContacts.map((contact, index) => {
 			return (
 				<tr key={index} className='tableRow'>
 					<td>{contact.company.name}</td>
 					<td
 						onClick={() => props.show(contact.id)}
-						className='contactHover'
-					>{contact.fname} {contact.lname}</td>
+						className='contactHover'>{contact.fname} {contact.lname}</td>
+
 					<td>{contact.title}</td>
-					<td>{contact.email}</td>
+					<td><a href={`mailto:${contact.email}`}>{contact.email}</a></td>
 					<td>{contact.phone}</td>
 
 					<td className='rowButton'><button
@@ -32,9 +32,6 @@ const ContactsList = (props) => {
 	}
 
 	return (
-		// <Container>
-		// 	<Row>
-		// 		<Col xs="60px">
 		<div>
 			<table className="List">
 				<thead>

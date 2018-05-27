@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table } from 'reactstrap'
+// import { Table } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import './CompaniesList.css'
 
@@ -36,9 +36,10 @@ const CompaniesList = (props) => {
 
 	return (
 		<div>
-			<Table striped className="List">
+			{/* <Table striped className="List"> */}
+			<table>
 				<thead>
-					<tr>
+					<tr className='tableRow'>
 						<th className="col-sm-1">name
 						</th>
 						<th>city</th>
@@ -54,7 +55,8 @@ const CompaniesList = (props) => {
 				<tbody>
 					{renderCompanies}
 				</tbody>
-			</Table>
+				{/* </Table> */}
+			</table>
 		</div >
 	)
 }

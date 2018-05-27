@@ -102,17 +102,3 @@ export const deleteContact = (id, history) => {
 			})
 	}
 }
-
-//-----SHOW CONTACT ----------------------
-export const showContact = () => {
-	return {
-		type: actionTypes.SHOW_CONTACT
-	}
-}
-
-//-----CLOSE CONTACT ----------------------
-export const closeContact = () => {
-	return {
-		type: actionTypes.CLOSE_CONTACT
-	}
-}

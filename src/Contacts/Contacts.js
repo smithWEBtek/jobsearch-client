@@ -44,19 +44,18 @@ class Contacts extends Component {
 	//********SHOW_CONTACT form handling ****************
 	showContact = (id) => {
 		let contact = this.props.contacts.find(contact => contact.id === id)
-		this.props.onShowContact()
 		this.setState({
-			contact: contact
+			contact: contact,
+			showContact: true
 		})
 	}
 
 	closeContact = () => {
-		this.props.onCloseContact()
 		this.setState({
+			showContact: false,
 			contact: null
 		})
 	}
-
 
 	//********EDIT_CONTACT form handling ****************
 	showEditContactForm = (id) => {
@@ -98,6 +97,7 @@ class Contacts extends Component {
 
 				{/*********CREATE CONTACT MODAL********************/}
 				<button onClick={this.createContactForm}>Add Contact</button>
+
 				<Modal
 					show={this.state.createContact}
 					modalClosed={this.createContactFormCancel}>
@@ -105,18 +105,6 @@ class Contacts extends Component {
 						createContact={(newContactData) => this.createContact(newContactData)}
 						createContactCancel={this.createContactFormCancel} />
 				</Modal>
-
-				{/*********SHOW CONTACT MODAL********************/}
-				<ContactModal
-					show={this.state.showContact}
-					modalClosed={this.closeContact}>
-					{this.state.showContact ?
-						<Contact
-							contact={this.state.contact}
-							edit={(id) => this.showContact(id)}
-							close={() => this.closeContact()}
-						/> : null}
-				</ContactModal>
 
 				{/**********CONTACTS LIST************************/}
 				{this.props.contacts ?
@@ -137,9 +125,21 @@ class Contacts extends Component {
 						<EditContact
 							contact={this.state.contact}
 							companies={this.state.companies}
-							edit={(id) => this.showEditContactForm(id)}
-							// update={(data, history) => this.props.onUpdateContact(data, history)}
+							editOpen={(id) => this.showEditContactForm(id)}
+							update={(data, history) => this.props.onUpdateContact(data, history)}
 							close={() => this.closeEditContactForm()}
+						/> : null}
+				</Modal>
+
+				{/*********SHOW CONTACT MODAL********************/}
+				<Modal
+					show={this.state.showContact}
+					modalClosed={this.closeContact}>
+					{this.state.contact ?
+						<Contact
+							contact={this.state.contact}
+							show={(id) => this.showContact(id)}
+							close={() => this.closeContact()}
 						/> : null}
 				</Modal>
 			</Container>
@@ -149,8 +149,6 @@ class Contacts extends Component {
 
 const mapStateToProps = state => {
 	return {
-		showContact: state.con.showContact,
-		closeContact: state.con.closeContact,
 		companies: state.com.companies,
 		contacts: state.con.contacts
 	}
@@ -158,8 +156,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		onShowContact: () => dispatch(actions.showContact()),
-		onCloseContact: () => dispatch(actions.closeContact()),
 		onFetchContacts: () => dispatch(actions.fetchContacts()),
 		onDeleteContact: (id, history) => dispatch(actions.deleteContact(id, history)),
 		onCreateContact: (data) => dispatch(actions.createContact(data)),

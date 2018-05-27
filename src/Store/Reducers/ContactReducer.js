@@ -102,18 +102,6 @@ const reducer = (state = initialState, action) => {
 				contacts: updatedContacts
 			})
 
-		//----- SHOW_CONTACT -----------------------------
-		case actionTypes.SHOW_CONTACT:
-			return Object.assign({}, state, {
-				showContact: true
-			})
-
-		//----- CLOSE_CONTACT -----------------------------
-		case actionTypes.CLOSE_CONTACT:
-			return Object.assign({}, state, {
-				showContact: false
-			})
-
 		//----- DEFAULT --------------------------------
 		default:
 			return state;
