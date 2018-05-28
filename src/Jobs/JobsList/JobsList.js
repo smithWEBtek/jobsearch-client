@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, Table } from 'reactstrap'
+import { Container, Row, Col } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import './JobsList.css'
 

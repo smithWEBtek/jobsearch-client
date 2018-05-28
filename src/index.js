@@ -17,11 +17,6 @@ import App from './App'
 import classes from './index.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
-
-import dotenv from 'dotenv'
-dotenv.config()
-// require('dotenv').config()
-
 const rootReducer = combineReducers({
 	com: CompanyReducer,
 	con: ContactReducer,
