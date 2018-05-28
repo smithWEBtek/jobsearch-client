@@ -17,7 +17,7 @@ export const createTask = (data, history) => {
 		TaskService.createTask(data)
 			.then(response => {
 				dispatch({ type: actionTypes.CREATE_TASK, taskData: response })
-				history.push(`/tasks/${response.id}`)
+				// history.push(`/tasks/${response.id}`)
 				dispatch(createTaskSuccess())
 			})
 			.catch(error => {
@@ -69,7 +69,7 @@ export const updateTask = (data, history) => {
 		TaskService.updateTask(data)
 			.then(response => {
 				dispatch({ type: actionTypes.UPDATE_TASK, updatedTaskData: response })
-				history.goBack()
+				history.push('/tasks')
 				dispatch(updateTaskSuccess())
 			})
 			.catch(error => {
