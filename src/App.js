@@ -7,7 +7,6 @@ import { Route } from 'react-router-dom'
 import Companies from '../src/Companies/Companies'
 import Contacts from '../src/Contacts/Contacts'
 import Jobs from '../src/Jobs/Jobs'
-import Logs from '../src/Logs/Logs'
 import Steps from '../src/Steps/Steps'
 import Tasks from '../src/Tasks/Tasks'
 // import Users from '../src/Users/Users'
@@ -40,8 +39,6 @@ class App extends Component {
 					<Route path="/steps" component={Steps} />
 
 					<Route path="/tasks" component={Tasks} />
-
-					<Route path="/logs" component={Logs} />
 
 				</Container>
 			</div>

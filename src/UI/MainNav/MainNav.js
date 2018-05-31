@@ -28,9 +28,6 @@ class MainNav extends Component {
 				<Button>
 					<Link to="/tasks/">Tasks</Link>
 				</Button>
-				<Button>
-					<Link to="/logs/">Logs</Link>
-				</Button>
 				<Button onClick={actions.backupData()}>BackupData</Button>
 			</div>
 		);

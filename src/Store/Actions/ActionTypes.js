@@ -65,27 +65,6 @@ export const UPDATE_JOB_START = 'UPDATE_JOB_START'
 export const UPDATE_JOB_SUCCESS = 'UPDATE_JOB_SUCCESS'
 export const UPDATE_JOB_FAIL = 'UPDATE_JOB_FAIL'
 
-// LOGS------------------------------------------------------
-export const FETCH_LOGS = 'FETCH_LOGS'
-export const FETCH_LOGS_START = 'FETCH_LOGS_START'
-export const FETCH_LOGS_SUCCESS = 'FETCH_LOGS_SUCCESS'
-export const FETCH_LOGS_FAIL = 'FETCH_LOGS_FAIL'
-
-export const CREATE_LOG = 'CREATE_LOG'
-export const CREATE_LOG_START = 'CREATE_LOG_START'
-export const CREATE_LOG_SUCCESS = 'CREATE_LOG_SUCCESS'
-export const CREATE_LOG_FAIL = 'CREATE_LOG_FAIL'
-
-export const DELETE_LOG = 'DELETE_LOG'
-export const DELETE_LOG_START = 'DELETE_LOG_START'
-export const DELETE_LOG_SUCCESS = 'DELETE_LOG_SUCCESS'
-export const DELETE_LOG_FAIL = 'DELETE_LOG_FAIL'
-
-export const UPDATE_LOG = 'UPDATE_LOG'
-export const UPDATE_LOG_START = 'UPDATE_LOG_START'
-export const UPDATE_LOG_SUCCESS = 'UPDATE_LOG_SUCCESS'
-export const UPDATE_LOG_FAIL = 'UPDATE_LOG_FAIL'
-
 // STEPS------------------------------------------------------
 export const FETCH_STEPS = 'FETCH_STEPS'
 export const FETCH_STEPS_START = 'FETCH_STEPS_START'

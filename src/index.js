@@ -8,7 +8,6 @@ import thunk from 'redux-thunk'
 import CompanyReducer from './Store/Reducers/CompanyReducer'
 import ContactReducer from './Store/Reducers/ContactReducer'
 import JobReducer from './Store/Reducers/JobReducer'
-import LogReducer from './Store/Reducers/LogReducer'
 import TaskReducer from './Store/Reducers/TaskReducer'
 import StepReducer from './Store/Reducers/StepReducer'
 import UserReducer from './Store/Reducers/UserReducer'
@@ -21,7 +20,6 @@ const rootReducer = combineReducers({
 	com: CompanyReducer,
 	con: ContactReducer,
 	job: JobReducer,
-	log: LogReducer,
 	tsk: TaskReducer,
 	stp: StepReducer,
 	usr: UserReducer

@@ -23,13 +23,6 @@ export {
 } from './JobActions'
 
 export {
-	createLog,
-	deleteLog,
-	updateLog,
-	fetchLogs
-} from './LogActions'
-
-export {
 	createStep,
 	deleteStep,
 	updateStep,
