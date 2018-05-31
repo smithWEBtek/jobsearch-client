@@ -1,5 +1,4 @@
-// const API_URL = process.env.REACT_APP_DEV_API_URL || 'https://swt-jobsearch-api.herokuapp.com/api'
-const API_URL = 'https://swt-jobsearch-api.herokuapp.com/api' || process.env.REACT_APP_DEV_API_URL
+const API_URL = process.env.REACT_APP_DEV_API_URL
 
 const ContactService = {
 	createContact(contact) {
