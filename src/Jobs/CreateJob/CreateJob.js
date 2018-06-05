@@ -3,6 +3,7 @@ import './CreateJob.css'
 import * as actions from '../../Store/Actions/Index'
 import { connect } from 'react-redux'
 import CompanySelect from '../../Companies/CompanySelect/CompanySelect'
+import { debug } from 'util';
 
 class CreateJob extends Component {
 	state = {
@@ -11,7 +12,13 @@ class CreateJob extends Component {
 		instructions: '',
 		requirements: '',
 		url: '',
-		company_id: 1
+		company_id: 1,
+		companies: []
+	}
+
+	componentDidMount() {
+		this.props.onFetchCompanies()
+		this.setState({ companies: this.props.companies })
 	}
 
 	handleOnChange = (event) => {
@@ -22,6 +29,9 @@ class CreateJob extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
 		const jobData = this.state;
+
+		debugger
+
 		this.props.onCreateJob(jobData)
 		this.setState({
 			title: '',
@@ -40,6 +50,12 @@ class CreateJob extends Component {
 			<div>
 				<p>Complete form and click 'Add Job'</p>
 				<form onSubmit={this.handleSubmit}>
+
+					<hr />
+					<CompanySelect companies={this.props.companies} />
+					<hr />
+
+
 					<p><label htmlFor="name">title</label>
 						<input
 							type="text"
@@ -85,9 +101,6 @@ class CreateJob extends Component {
 							placeholder="url"
 							required />
 					</p>
-					<hr />
-					<CompanySelect companies={this.props.companies} />
-					<hr />
 
 					<button
 						type="button"
@@ -111,7 +124,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		onCreateJob: (data) => dispatch(actions.createJob(data))
+		onCreateJob: (data) => dispatch(actions.createJob(data)),
+		onFetchCompanies: () => dispatch(actions.fetchCompanies())
 	};
 }
 
