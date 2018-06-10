@@ -3,7 +3,6 @@ import './CreateJob.css'
 import * as actions from '../../Store/Actions/Index'
 import { connect } from 'react-redux'
 import CompanySelect from '../../Companies/CompanySelect/CompanySelect'
-import { debug } from 'util';
 
 class CreateJob extends Component {
 	state = {
@@ -13,6 +12,7 @@ class CreateJob extends Component {
 		requirements: '',
 		url: '',
 		company_id: 1,
+		company: {},
 		companies: []
 	}
 
@@ -28,11 +28,14 @@ class CreateJob extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
+		this.setState({
+			company: this.handleCompanySelect
+		})
 		const jobData = this.state;
-
-		debugger
-
 		this.props.onCreateJob(jobData)
+
+		debugger;
+
 		this.setState({
 			title: '',
 			description: '',
@@ -44,6 +47,11 @@ class CreateJob extends Component {
 		this.props.createJobCancel()
 	}
 
+	handleCompanySelect(id) {
+		debugger;
+
+	}
+
 	render() {
 
 		return (
@@ -52,9 +60,11 @@ class CreateJob extends Component {
 				<form onSubmit={this.handleSubmit}>
 
 					<hr />
-					<CompanySelect companies={this.props.companies} />
+					<CompanySelect
+						companies={this.props.companies}
+						onSelect={(id) => this.handleCompanySelect(id)}
+					/>
 					<hr />
-
 
 					<p><label htmlFor="name">title</label>
 						<input

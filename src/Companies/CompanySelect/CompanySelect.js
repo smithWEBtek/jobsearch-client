@@ -14,6 +14,10 @@ class CompanySelect extends Component {
 		})
 	}
 
+	submitCompanySelection() {
+		this.props.onSelect(this.state.company.id)
+	}
+
 	render() {
 		const companySelectOptions = this.props.companies.map(company => {
 			return <option value={company.name} id={company.id} key={company.id}>{company.name}</option>

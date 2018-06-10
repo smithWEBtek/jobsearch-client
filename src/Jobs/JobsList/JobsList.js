@@ -26,7 +26,7 @@ const JobsList = (props) => {
 						onClick={() => props.edit(job.id)}>edit</button></td>
 
 					<td><button
-						onClick={() => props.deleteCompany(job.id)}
+						onClick={() => props.deleteJob(job.id)}
 						className="Delete">x</button></td>
 				</tr>
 			)
